@@ -1,1 +1,1 @@
-# OOP-Software-Engineering
+# Чуменко Игорь ПИНб-21
