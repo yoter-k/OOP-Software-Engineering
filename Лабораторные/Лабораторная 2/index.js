@@ -42,3 +42,5 @@ const onEvent = (req, res) => {
 
 const server = http.createServer(onEvent);
 server.listen(PORT, () => console.log(`http://${HOST}:${PORT}/`));
+
+// http://localhost:3000/  http://localhost:3000/filename/data1.csv
