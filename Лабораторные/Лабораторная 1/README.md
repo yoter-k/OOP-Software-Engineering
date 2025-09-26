@@ -67,6 +67,58 @@ numbers.sort((a, b) => b - a);
 console.log(numbers.join(" "));
 ```
 
+### Stepik №4: [ссылка на задачу](https://stepik.org/lesson/416145/step/5?unit=405659)
+
+```
+// put your javascript (node.js) code here
+const input = require("fs").readFileSync(0, "utf8").trim();
+const numbers = input.split(" ").map(Number);
+
+numbers.sort((a, b) => a - b);
+const sum = numbers[0] + numbers[1] + numbers[2];
+
+console.log(sum);
+```
+
+### Stepik №5: [ссылка на задачу](https://stepik.org/lesson/416145/step/6?unit=405659)
+```
+// put your javascript (node.js) code here
+const fs = require("fs");
+const input = fs.readFileSync(0, "utf8").trim().split("\n");
+
+const N = parseInt(input[0]);
+let min = 30001;
+
+for (let i = 1; i <= N; i++) {
+    let num = parseInt(input[i]);
+    if (num % 10 === 3 && num < min) {
+        min = num;
+    }
+}
+
+console.log(min);
+```
+
+### Stepik №6: [ссылка на задачу](https://stepik.org/lesson/416145/step/4?unit=405659)
+```
+// put your javascript (node.js) code here
+const fs = require("fs");
+const input = fs.readFileSync(0, "utf8").trim().split(" ").map(Number);
+
+const expectedSum = 100 * 101 / 2;
+const actualSum = input.reduce((a, b) => a + b, 0);
+
+console.log(expectedSum - actualSum);
+```
+
+
+### Stepik №7: [ссылка на задачу]()
+
+
+
+### Stepik №8: [ссылка на задачу]()
+
+### Stepik №9: [ссылка на задачу]()
 
 
 
