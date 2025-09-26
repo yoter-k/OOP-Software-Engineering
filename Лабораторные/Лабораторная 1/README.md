@@ -99,7 +99,7 @@ for (let i = 1; i <= N; i++) {
 console.log(min);
 ```
 
-### Stepik №6: [ссылка на задачу](https://stepik.org/lesson/416145/step/4?unit=405659)
+### Stepik №6: [ссылка на задачу](https://stepik.org/lesson/416145/step/7?unit=405659)
 ```
 // put your javascript (node.js) code here
 const fs = require("fs");
