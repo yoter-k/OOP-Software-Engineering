@@ -28,7 +28,7 @@
 - При **больших числах испытаний** (10⁶, 10⁸) отклонения становятся минимальными, подтверждая, что случайные числа распределяются более равномерно.
 - Для меньших значений (10², 10⁴) отклонения могут быть значительными, что связано с малым числом выборок.
 
-### Stepik: [ссылка на задачу](https://stepik.org/lesson/416145/step/2?unit=405659)
+### Stepik №1: [ссылка на задачу](https://stepik.org/lesson/416145/step/2?unit=405659)
 
 ```
 const input = require('fs').readFileSync(0, 'utf-8').trim();
@@ -36,3 +36,38 @@ const numbers = input.split(' ').map(Number);
 const result = numbers.find(num => num % 2 === 0);
 console.log(result);
 ```
+
+### Stepik №2: [ссылка на задачу](https://stepik.org/lesson/416145/step/3?unit=405659)
+
+```
+// put your javascript (node.js) code here
+const readline = require('readline');
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+rl.on('line', (line) => {
+    const numbers = line.trim().split(/\s+/).map(Number);
+    const oddNumbers = numbers.filter(num => num % 2 !== 0);
+    console.log(oddNumbers.join(' '));
+    rl.close();
+});
+```
+
+
+### Stepik №3: [ссылка на задачу](https://stepik.org/lesson/416145/step/4?unit=405659)
+
+```
+const input = require("fs").readFileSync(0, "utf8").trim();
+const numbers = input.split(" ").map(Number);
+
+numbers.sort((a, b) => b - a);
+console.log(numbers.join(" "));
+```
+
+
+
+
+
