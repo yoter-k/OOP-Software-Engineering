@@ -112,8 +112,17 @@ console.log(expectedSum - actualSum);
 ```
 
 
-### Stepik №7: [ссылка на задачу]()
+### Stepik №7: [ссылка на задачу](https://stepik.org/lesson/416145/step/8?unit=405659)
+```
+// put your javascript (node.js) code here
+const fs = require("fs");
+const input = fs.readFileSync(0, "utf8").trim().split(" ").map(Number);
 
+const expectedSum = 100 * 101 / 2;
+const actualSum = input.reduce((a, b) => a + b, 0);
+
+console.log(actualSum - expectedSum);
+```
 
 
 ### Stepik №8: [ссылка на задачу]()
