@@ -29,7 +29,6 @@
 - Для меньших значений (10², 10⁴) отклонения могут быть значительными, что связано с малым числом выборок.
 
 ### Stepik №1: [ссылка на задачу](https://stepik.org/lesson/416145/step/2?unit=405659)
-
 ```
 const input = require('fs').readFileSync(0, 'utf-8').trim();
 const numbers = input.split(' ').map(Number);
@@ -38,7 +37,6 @@ console.log(result);
 ```
 
 ### Stepik №2: [ссылка на задачу](https://stepik.org/lesson/416145/step/3?unit=405659)
-
 ```
 // put your javascript (node.js) code here
 const readline = require('readline');
@@ -56,9 +54,7 @@ rl.on('line', (line) => {
 });
 ```
 
-
 ### Stepik №3: [ссылка на задачу](https://stepik.org/lesson/416145/step/4?unit=405659)
-
 ```
 const input = require("fs").readFileSync(0, "utf8").trim();
 const numbers = input.split(" ").map(Number);
@@ -68,7 +64,6 @@ console.log(numbers.join(" "));
 ```
 
 ### Stepik №4: [ссылка на задачу](https://stepik.org/lesson/416145/step/5?unit=405659)
-
 ```
 // put your javascript (node.js) code here
 const input = require("fs").readFileSync(0, "utf8").trim();
@@ -111,7 +106,6 @@ const actualSum = input.reduce((a, b) => a + b, 0);
 console.log(expectedSum - actualSum);
 ```
 
-
 ### Stepik №7: [ссылка на задачу](https://stepik.org/lesson/416145/step/8?unit=405659)
 ```
 // put your javascript (node.js) code here
@@ -124,11 +118,30 @@ const actualSum = input.reduce((a, b) => a + b, 0);
 console.log(actualSum - expectedSum);
 ```
 
+### Stepik №8: [ссылка на задачу](https://stepik.org/lesson/416145/step/9?unit=405659)
+```
+// put your javascript (node.js) code here
+const fs = require("fs");
+const input = fs.readFileSync(0, "utf8").trim().split(" ").map(Number);
+const missing = input.reduce((acc, num) => acc ^ num, 0);
 
-### Stepik №8: [ссылка на задачу]()
+console.log(missing);
+```
 
-### Stepik №9: [ссылка на задачу]()
+### Stepik №9: [ссылка на задачу](https://stepik.org/lesson/416145/step/10?unit=405659)
+```
+// put your javascript (node.js) code here
+const fs = require("fs");
+const input = fs.readFileSync(0, "utf8").trim().split("\n");
+const N = parseInt(input[0]);
+const langs = input.slice(1).map(line => {
+    const [name, rating] = line.split(";");
+    return { name, rating: parseFloat(rating) };
+});
 
+langs.sort((a, b) => b.rating - a.rating);
+console.log(langs[N - 1].name);
+```
 
 
 
