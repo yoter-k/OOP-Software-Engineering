@@ -1,0 +1,1894 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <title>Погода в Перми на неделю (Пермский край , Россия) - Погода7</title>
+    <meta name="description" content="Точный прогноз погоды на неделю (7 дней) в Перми, Пермский край , Россия. Данные о погоде  - температура, осадки, влажность, ветер на семь дней. Pogoda7 - Погода на неделю">
+    <meta name="keywords" content="Погода, в Перми, на неделю, на 7 дней, семь дней, осадки, температура, влажность, давление, облачность">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <!--[if lt IE 9]><script type="text/javascript">if(document.addEventListener===undefined && document.attachEvent!==undefined){document.addEventListener=function(name, func){document.attachEvent("on"+name, func);}}</script><![endif]-->
+    <link type="text/css" href="/templates/pogoda/css/13/index2.min.css" rel="stylesheet" media="all" />
+    <link type="text/css" href="/templates/pogoda/css/13/gorod2.min.css" rel="stylesheet" media="all" />
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "/",
+                    "name": "Погода"
+                }
+            }, {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "/prognoz",
+                    "name": "Прогноз"
+                }
+            }, {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@id": "/prognoz/RU-Russia",
+                    "name": "Россия"
+                }
+            }, {
+                "@type": "ListItem",
+                "position": 4,
+                "item": {
+                    "@id": "/prognoz/RU-Russia/r59-Permskiy_kray",
+                    "name": "Пермский край "
+                }
+            }, {
+                "@type": "ListItem",
+                "position": 5,
+                "item": {
+                    "@id": "",
+                    "name": "Пермь"
+                }
+            }]
+        }
+    </script>
+    <script>
+        window.yaContextCb = window.yaContextCb || []
+    </script>
+    <script src="https://yandex.ru/ads/system/context.js" async></script>
+
+</head>
+
+<body>
+    <script>
+        var GWS = GWS || {};
+        GWS.rjs = function(a, e) {
+            "use strict";
+            var t = function() {
+                    return {
+                        eventStack: [],
+                        pendingListeners: [],
+                        reset: function() {
+                            this.eventStack = [], this.pendingListeners = []
+                        },
+                        resolvePendingListeners: function() {
+                            var t = this;
+                            this.pendingListeners.forEach(function(e, n) {
+                                e && t.isEveryEventResolved(e.events) && (e.handler(), delete t.pendingListeners[n])
+                            })
+                        },
+                        isEveryEventResolved: function(e) {
+                            var n = this;
+                            return e.every(function(e) {
+                                return -1 !== n.eventStack.indexOf(e)
+                            })
+                        },
+                        trigger: function(e) {
+                            r.debug && console.log(">> `" + e + "` triggered"), this.eventStack.push(e), this.resolvePendingListeners()
+                        },
+                        on: function(e, n) {
+                            if (r.debug && console.log(">> `" + a.JSON.stringify(e) + "` subscribed"), !Array.isArray(e)) throw new TypeError("The first parameter must an array");
+                            if ("function" != typeof n) throw new TypeError("The second parameter must a function");
+                            if (this.isEveryEventResolved(e)) return n();
+                            this.pendingListeners.push({
+                                events: e,
+                                handler: n
+                            })
+                        }
+                    }
+                },
+                r = {
+                    debug: !1
+                },
+                c = function(e) {
+                    var n = a.document.createElement("link");
+                    return n.type = "text/css", n.rel = "stylesheet", n.href = e, n.async = !0, n
+                },
+                d = function(e) {
+                    var n = a.document.createElement("script");
+                    return n.type = "text/javascript", n.src = e, n.async = !0, n
+                };
+            return new function() {
+                var s = new t,
+                    n = function() {
+                        "complete" === a.document.readyState || "loaded" === a.document.readyState ? s.trigger("DOMContentLoaded") : a.document.addEventListener("DOMContentLoaded", function() {
+                            s.trigger("DOMContentLoaded")
+                        }, !1)
+                    };
+                return n(), {
+                    define: function(e, n, t, r) {
+                        var i = function(e) {
+                                var n = e.split(".").pop().toLowerCase().split("?").shift();
+                                switch (n) {
+                                    case "css":
+                                        return c(e);
+                                    case "js":
+                                        return d(e)
+                                }
+                                throw new Error("Unknown file extension " + n)
+                            }(e.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, "")),
+                            o = r ? t.bind(r) : t;
+                        if ("string" != typeof n) throw new TypeError("You have to specify dependency name");
+                        i.setAttribute("data-rjs", !0), a.document.body.appendChild(i), void 0 === i.onload ? i.onreadystatechange = function() {
+                            "loaded" === i.readyState && (s.trigger(n), o && o())
+                        } : i.onload = function() {
+                            s.trigger(n), o && o()
+                        }
+                    },
+                    require: function(e, n, t) {
+                        t && (n = n.bind(t)), s.on(e, n)
+                    },
+                    init: function(e) {
+                        r = e || {
+                            debug: !1
+                        }, s.reset(), n()
+                    },
+                    reset: function() {
+                        var e = document.querySelectorAll("script[data-rjs]"),
+                            n = document.querySelectorAll("link[data-rjs]");
+                        [].concat(e, n).forEach(function(e) {
+                            e.type && e.parentNode.removeChild(e)
+                        })
+                    }
+                }
+            }
+        }(this);
+    </script>
+    <script>
+        var GWS = GWS || {};
+        GWS.bdvs = {};
+        GWS.bdvs.ids = [
+            ['cZDIyfDkyfGMx', 'lNDMwfDQxMHw2MQ', 'cYTI1fGU0fGYx', 'VNDI4fDAxMXwzMQ'],
+            []
+        ];
+        GWS.bdvs.url = '//pogoda7.ru/watcher';
+    </script>
+
+    <div class="body100">
+        <div id="header">
+            <div class="header16">
+                <div class="h1"><a title="Переход на главную страницу" href="/">Погода на неделю</a></div>
+                <form action="/search" class="search" id="search" name="search" method="post">
+                    <div class="search-div">
+                        <button type="submit" class="search-button">Поиск</button>
+                        <input placeholder="Поиск города" type="text" name="stext" class="search-input">
+                    </div>
+                </form>
+                <div class="clear"></div>
+                <div id="subheader" class="subheader">
+                    <h1>Погода в Перми на неделю</h1>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div id="body">
+
+            <div id="navigation_down">
+                <div class="width_controller_down">
+                    <div id="menu_down">
+                        <a href="/prognoz/gorod701-Russia-Permskiy_kray-Perm/1days" class="first " title="Погода на сегодня и завтра в Перми">сегодня и завтра</a><a href="/prognoz/gorod701-Russia-Permskiy_kray-Perm/3days" class="" title="Погода на 3 дня в Перми">3 дня</a>
+                        <a
+                            class="selected" title="Погода на неделю в Перми">неделя</a><a href="/prognoz/gorod701-Russia-Permskiy_kray-Perm/10days" class="" title="Погода на 10 дней в Перми">10 дней</a><a href="/prognoz/gorod701-Russia-Permskiy_kray-Perm/14days" class="" title="Погода на 14 дней в Перми">14 дней</a>
+                            <a
+                                href="/prognoz/gorod701-Russia-Permskiy_kray-Perm/map" class="last  map" title="Погода на карте в Перми">карта</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="breadcrumb grid">
+                <div id="breadcrumb">
+                    <ul>
+                        <li><a href="/">Погода</a><span class="divider"> > </span></li>
+                        <li><a href="/prognoz">Прогноз</a><span class="divider"> > </span></li>
+                        <li><a href="/prognoz/RU-Russia">Россия</a><span class="divider"> > </span></li>
+                        <li><a href="/prognoz/RU-Russia/r59-Permskiy_kray">Пермский край </a><span class="divider"> > </span></li>
+                        <li>Пермь</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clear"></div>
+
+            <div class="current">
+                <div class="share42init_" data-top1="235" data-top2="25" data-margin="-30" data-path="/templates/pogoda/images/" data-icons-file="icons2.png" data-image="//pogoda7.ru/templates/pogoda/images/social_logo_share2.png"></div>
+                <div class="grid current_name"><span class="span_h2">Сейчас  в Перми </span></div>
+                <div class="clear"></div>
+                <div class="current_data">
+                    <div class="grid image"> <img title="Сейчас в Перми:
+Температура: -14.7 .. -13.5 °C 
+Осадки: возможен небольшой снег
+Облачность: пасмурно
+Ветер: слабый ветер, восточный,северо-восточный, 4 м/с 
+Влажность: 89 %
+Давление: 744 мм рт.ст.
+Видимость: 700 м.
+УФ-индекс: 0.8
+" alt="пасмурно" src="/templates/pogoda/images/cloud/big_sun_4_4.gif" /> </div>
+                    <div class="grid precip">
+                        <div class="temperature" title="Текущая температура в Перми: -14.7°C .. -13.5°C">-14°C</div>
+                        <div class="cloud" title="Общая облачность: 100%
+  Верхняя облачность: 5%
+  Средняя облачность: 84%
+  Нижняя облачность: 100%
+">пасмурно</div>
+                        <div class="precipitation" title="Осадки: 0.07 мм/час">возможен небольшой снег</div>
+                        <div class="vis" title="Видимость">Видимость: 700 м.</div>
+                    </div>
+                    <div class="grid wind_pres">
+                        <div class="wind" title="Ветер в Перми:
+слабый ветер, 4м/с (порывы до 7 м/с)
+Направление: восточный,северо-восточный">
+                            <div class="wind_image_div wind_ENE"></div>
+                            <div class="wind_text_div">4 м/с (порывы до 7 м/с). слабый ветер, восточный,северо-восточный</div>
+                        </div>
+                        <div class="pressure" title="Атмосферное давление в миллиметрах ртутного столба">Давление: 744 мм рт.ст.</div>
+                        <div class="relative_humidity" title="Относительная влажность воздуха">Влажность: 89%</div>
+                        <div class="uvi" title="Уровень солнечного излучения">УФ-индекс: 1 (низкий)</div>
+                    </div>
+                    <div class="grid sun_moon">
+                        <div class="sun">
+                            <div class="sunrise_miniimage"></div>
+                            <div class="sunrise_set" title="Восход и закат солнца">
+                                Восход: 08:01<br/> Закат: 18:52 </div>
+                        </div>
+                        <div class="moon">
+                            <div class="moon_miniimage"></div>
+                            <div class="moon_text" title="убывающая луна, третья фаза (рассеивающая луна)
+ Видимость луны: 92%
+ 16 лунный день">16 день<br/> Видимость 92%
+                            </div>
+                        </div>
+                        <div class="moon_image moon6" title="убывающая луна, третья фаза (рассеивающая луна)
+ Видимость луны: 92%
+ 16 лунный день">
+                        </div>
+                    </div>
+
+
+
+                    <div class="clear"></div>
+                </div>
+            </div>
+
+            <div class="clear"></div>
+
+            <div id="cZDIyfDkyfGMx" style="margin: 20px 0 10px;width: 100%;">
+                <!-- Yandex.RTB R-A-186487-1 -->
+                <div id="yandex_rtb_up1"></div>
+                <script>
+                    window.yaContextCb.push(() => {
+                        var blockId = "R-A-186487-1";
+                        Ya.Context.AdvManager.render({
+                            renderTo: 'yandex_rtb_up1',
+                            blockId: blockId
+                        })
+                    })
+                </script>
+            </div>
+            <div class="clear"></div>
+
+
+            <div class="forecast">
+                <div id="navigation">
+                    <div class="forecast_name">
+                        <h2>Погода на неделю в Перми (Кратко)</h2>
+                    </div>
+                    <div class="width_controller">
+                        <div id="menu">
+                            <a class="first last" href="/prognoz/gorod701-Russia-Permskiy_kray-Perm/full" title="Подробный прогноз погоды  на неделю в Перми">Подробно</a> </div>
+                    </div>
+
+                </div>
+
+
+
+                <div class="forecast-table">
+
+                    <div class="table-row-day dayline">
+
+                        <div class="table-cell-day dayweek">
+                            <div class="dayweek_date">04 марта</div>
+                            <div class="dayweek_week">Ср</div>
+                        </div>
+
+                        <div class="table-cell-day times">
+                            <div class="table-row-time">
+                                <div class="table-cell timeofday_cell" title="04 марта 11:00 (время местное)">
+                                    <div class="timeofday_div">утро</div>
+                                    <div class="timeofday">11:00</div>
+                                </div>
+
+                                <div class="table-cell temperature_cell" title="04 марта 11:00
+Температура: -16 .. -14.5 °C 
+Осадки: возможен небольшой снег
+Облачность: пасмурно
+Ветер: слабый ветер, восточный,северо-восточный, 5 м/с 
+Влажность: 91 %
+Давление: 744 мм рт.ст.
+Видимость: 500 м.
+УФ-индекс: 0.5
+">-14°</div>
+
+                                <div class="table-cell cloud_cell" title="Общая облачность: 100%
+ Верхняя облачность: 5%
+ Средняя облачность: 69%
+ Нижняя облачность: 100%
+Осадки: 0.12мм">
+                                    <div class="cloud_image_div cloud_sun_4_4"></div>
+                                </div>
+
+                                <div class="table-cell cloud_text_cell" title="пасмурно, возможен небольшой снег">
+                                    <div class="cloud_text_div">пасмурно, возможен небольшой снег</div>
+                                </div>
+
+                                <div class="table-cell wind_cell" title="Ветер: 4.6 м/с
+слабый ветер, восточный,северо-восточный ">
+                                    <div class="wind_image_div wind_ENE"></div>
+                                    <div class="wind_socr_text_div">В,С-В</div>
+                                </div>
+
+                                <div class="table-cell wind_ms_cell" title="Ветер: 4.6 м/с
+ слабый ветер, восточный,северо-восточный">5 м/с </div>
+
+
+                                <div class="table-cell pres_text_cell" title="Давление: 744 мм рт.ст.">744 мм</div>
+                                <div class="table-cell rh_text_cell" title="Относительная влажность воздуха: 91%">91%</div>
+                            </div>
+                            <div class="table-row-time">
+                                <div class="table-cell timeofday_cell" title="04 марта 12:00 (время местное)">
+                                    <div class="timeofday_div">день</div>
+                                    <div class="timeofday">12:00</div>
+                                </div>
+
+                                <div class="table-cell temperature_cell" title="04 марта 12:00
+Температура: -14.4 .. -13.3 °C 
+Осадки: возможен небольшой снег
+Облачность: пасмурно
+Ветер: слабый ветер, восточный,северо-восточный, 4 м/с 
+Влажность: 89 %
+Давление: 744 мм рт.ст.
+Видимость: 800 м.
+УФ-индекс: 0.9
+">-13°</div>
+
+                                <div class="table-cell cloud_cell" title="Общая облачность: 100%
+ Верхняя облачность: 5%
+ Средняя облачность: 88%
+ Нижняя облачность: 100%
+Осадки: 0.06мм">
+                                    <div class="cloud_image_div cloud_sun_4_4"></div>
+                                </div>
+
+                                <div class="table-cell cloud_text_cell" title="пасмурно, возможен небольшой снег">
+                                    <div class="cloud_text_div">пасмурно, возможен небольшой снег</div>
+                                </div>
+
+                                <div class="table-cell wind_cell" title="Ветер: 4.4 м/с
+слабый ветер, восточный,северо-восточный ">
+                                    <div class="wind_image_div wind_ENE"></div>
+                                    <div class="wind_socr_text_div">В,С-В</div>
+                                </div>
+
+                                <div class="table-cell wind_ms_cell" title="Ветер: 4.4 м/с
+ слабый ветер, восточный,северо-восточный">4 м/с </div>
+
+
+                                <div class="table-cell pres_text_cell" title="Давление: 744 мм рт.ст.">744 мм</div>
+                                <div class="table-cell rh_text_cell" title="Относительная влажность воздуха: 89%">89%</div>
+                            </div>
+                            <div class="table-row-time">
+                                <div class="table-cell timeofday_cell" title="04 марта 17:00 (время местное)">
+                                    <div class="timeofday_div">день</div>
+                                    <div class="timeofday">17:00</div>
+                                </div>
+
+                                <div class="table-cell temperature_cell" title="04 марта 17:00
+Температура: -14.4 .. -10.7 °C 
+Осадки: возможен небольшой снег
+Облачность: пасмурно
+Ветер: слабый ветер, восточный,северо-восточный, 4 м/с 
+Влажность: 91 %
+Давление: 744 мм рт.ст.
+Видимость: 500 м.
+УФ-индекс: 0.5
+">-11°</div>
+
+                                <div class="table-cell cloud_cell" title="Общая облачность: 100%
+ Верхняя облачность: 0%
+ Средняя облачность: 97%
+ Нижняя облачность: 99%
+Осадки: 0.12мм">
+                                    <div class="cloud_image_div cloud_sun_4_4"></div>
+                                </div>
+
+                                <div class="table-cell cloud_text_cell" title="пасмурно, возможен небольшой снег">
+                                    <div class="cloud_text_div">пасмурно, возможен небольшой снег</div>
+                                </div>
+
+                                <div class="table-cell wind_cell" title="Ветер: 4 м/с
+слабый ветер, восточный,северо-восточный ">
+                                    <div class="wind_image_div wind_ENE"></div>
+                                    <div class="wind_socr_text_div">В,С-В</div>
+                                </div>
+
+                                <div class="table-cell wind_ms_cell" title="Ветер: 4 м/с
+ слабый ветер, восточный,северо-восточный">4 м/с </div>
+
+
+                                <div class="table-cell pres_text_cell" title="Давление: 744 мм рт.ст.">744 мм</div>
+                                <div class="table-cell rh_text_cell" title="Относительная влажность воздуха: 91%">91%</div>
+                            </div>
+                            <div class="table-row-time">
+                                <div class="table-cell timeofday_cell" title="04 марта 23:00 (время местное)">
+                                    <div class="timeofday_div">вечер</div>
+                                    <div class="timeofday">23:00</div>
+                                </div>
+
+                                <div class="table-cell temperature_cell" title="04 марта 23:00
+Температура: -14.8 .. -10.9 °C 
+Осадки: возможен небольшой снег
+Облачность: облачно с прояснениями
+Ветер: слабый ветер, восточный,северо-восточный, 3 м/с 
+Влажность: 92 %
+Давление: 745 мм рт.ст.
+Видимость: 5 км.
+УФ-индекс: 0
+">-15°</div>
+
+                                <div class="table-cell cloud_cell" title="Общая облачность: 70%
+ Верхняя облачность: 0%
+ Средняя облачность: 0%
+ Нижняя облачность: 70%
+Осадки: 0.06мм">
+                                    <div class="cloud_image_div cloud_moon_4_3"></div>
+                                </div>
+
+                                <div class="table-cell cloud_text_cell" title="облачно с прояснениями, возможен небольшой снег">
+                                    <div class="cloud_text_div">облачно с прояснениями, возможен небольшой снег</div>
+                                </div>
+
+                                <div class="table-cell wind_cell" title="Ветер: 3.5 м/с
+слабый ветер, восточный,северо-восточный ">
+                                    <div class="wind_image_div wind_ENE"></div>
+                                    <div class="wind_socr_text_div">В,С-В</div>
+                                </div>
+
+                                <div class="table-cell wind_ms_cell" title="Ветер: 3.5 м/с
+ слабый ветер, восточный,северо-восточный">3 м/с </div>
+
+
+                                <div class="table-cell pres_text_cell" title="Давление: 745 мм рт.ст.">745 мм</div>
+                                <div class="table-cell rh_text_cell" title="Относительная влажность воздуха: 92%">92%</div>
+                            </div>
+                        </div>
+                        <div class="table-cell-day moon_cell">
+
+                            <div class="moon_div">
+                                <div class="sunrise_miniimage"></div>
+                                <div class="sunrise_set" title="Восход и закат солнца">
+                                    Восход: 08:01<br/> Закат: 18:52 </div>
+
+                                <div class="moon_miniimage"></div>
+                                <div class="moon_text" title="убывающая луна, третья фаза (рассеивающая луна)
+. Видимость луны: 92%
+ 16 лунный день">16 день<br/> Видимость 92%
+                                </div>
+                                <div class="moon_image moon6" title="убывающая луна, третья фаза (рассеивающая луна)
+ Видимость луны: 92%
+ 16 лунный день">
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="table-row-day dayline">
+
+                        <div class="table-cell-day dayweek">
+                            <div class="dayweek_date">05 марта</div>
+                            <div class="dayweek_week">Чт</div>
+                        </div>
+
+                        <div class="table-cell-day times">
+                            <div class="table-row-time">
+                                <div class="table-cell timeofday_cell" title="05 марта 05:00 (время местное)">
+                                    <div class="timeofday_div">ночь</div>
+                                    <div class="timeofday">05:00</div>
+                                </div>
+
+                                <div class="table-cell temperature_cell" title="05 марта 05:00
+Температура: -19.8 .. -15 °C 
+Осадки: возможен небольшой снег
+Облачность: облачно
+Ветер: легкий ветер, восточный,северо-восточный, 3 м/с 
+Влажность: 95 %
+Давление: 746 мм рт.ст.
+Видимость: 2 км.
+УФ-индекс: 0
+">-17°</div>
+
+                                <div class="table-cell cloud_cell" title="Общая облачность: 73%
+ Верхняя облачность: 0%
+ Средняя облачность: 0%
+ Нижняя облачность: 73%
+Осадки: 0.06мм">
+                                    <div class="cloud_image_div cloud_moon_4_4"></div>
+                                </div>
+
+                                <div class="table-cell cloud_text_cell" title="облачно, возможен небольшой снег">
+                                    <div class="cloud_text_div">облачно, возможен небольшой снег</div>
+                                </div>
+
+                                <div class="table-cell wind_cell" title="Ветер: 2.7 м/с
+легкий ветер, восточный,северо-восточный ">
+                                    <div class="wind_image_div wind_ENE"></div>
+                                    <div class="wind_socr_text_div">В,С-В</div>
+                                </div>
+
+                                <div class="table-cell wind_ms_cell" title="Ветер: 2.7 м/с
+ легкий ветер, восточный,северо-восточный">3 м/с </div>
+
+
+                                <div class="table-cell pres_text_cell" title="Давление: 746 мм рт.ст.">746 мм</div>
+                                <div class="table-cell rh_text_cell" title="Относительная влажность воздуха: 95%">95%</div>
+                            </div>
+                            <div class="table-row-time">
+                                <div class="table-cell timeofday_cell" title="05 марта 11:00 (время местное)">
+                                    <div class="timeofday_div">утро</div>
+                                    <div class="timeofday">11:00</div>
+                                </div>
+
+                                <div class="table-cell temperature_cell" title="05 марта 11:00
+Температура: -18.2 .. -14.9 °C 
+Осадки: без осадков
+Облачность: пасмурно
+Ветер: слабый ветер, восточный, 4 м/с 
+Влажность: 87 %
+Давление: 748 мм рт.ст.
+Видимость: 20 км.
+УФ-индекс: 0.7
+">-15°</div>
+
+                                <div class="table-cell cloud_cell" title="Общая облачность: 100%
+ Верхняя облачность: 0%
+ Средняя облачность: 0%
+ Нижняя облачность: 100%
+Осадки: 0мм">
+                                    <div class="cloud_image_div cloud_sun_1_5"></div>
+                                </div>
+
+                                <div class="table-cell cloud_text_cell" title="пасмурно, без осадков">
+                                    <div class="cloud_text_div">пасмурно, без осадков</div>
+                                </div>
+
+                                <div class="table-cell wind_cell" title="Ветер: 3.9 м/с
+слабый ветер, восточный ">
+                                    <div class="wind_image_div wind_E"></div>
+                                    <div class="wind_socr_text_div">В</div>
+                                </div>
+
+                                <div class="table-cell wind_ms_cell" title="Ветер: 3.9 м/с
+ слабый ветер, восточный">4 м/с </div>
+
+
+                                <div class="table-cell pres_text_cell" title="Давление: 748 мм рт.ст.">748 мм</div>
+                                <div class="table-cell rh_text_cell" title="Относительная влажность воздуха: 87%">87%</div>
+                            </div>
+                            <div class="table-row-time">
+                                <div class="table-cell timeofday_cell" title="05 марта 17:00 (время местное)">
+                                    <div class="timeofday_div">день</div>
+                                    <div class="timeofday">17:00</div>
+                                </div>
+
+                                <div class="table-cell temperature_cell" title="05 марта 17:00
+Температура: -14.8 .. -10 °C 
+Осадки: возможен небольшой снег
+Облачность: пасмурно
+Ветер: легкий ветер, восточный, 3 м/с 
+Влажность: 84 %
+Давление: 749 мм рт.ст.
+Видимость: 4 км.
+УФ-индекс: 0.6
+">-10°</div>
+
+                                <div class="table-cell cloud_cell" title="Общая облачность: 100%
+ Верхняя облачность: 0%
+ Средняя облачность: 0%
+ Нижняя облачность: 100%
+Осадки: 0.06мм">
+                                    <div class="cloud_image_div cloud_sun_4_4"></div>
+                                </div>
+
+                                <div class="table-cell cloud_text_cell" title="пасмурно, возможен небольшой снег">
+                                    <div class="cloud_text_div">пасмурно, возможен небольшой снег</div>
+                                </div>
+
+                                <div class="table-cell wind_cell" title="Ветер: 3 м/с
+легкий ветер, восточный ">
+                                    <div class="wind_image_div wind_E"></div>
+                                    <div class="wind_socr_text_div">В</div>
+                                </div>
+
+                                <div class="table-cell wind_ms_cell" title="Ветер: 3 м/с
+ легкий ветер, восточный">3 м/с </div>
+
+
+                                <div class="table-cell pres_text_cell" title="Давление: 749 мм рт.ст.">749 мм</div>
+                                <div class="table-cell rh_text_cell" title="Относительная влажность воздуха: 84%">84%</div>
+                            </div>
+                            <div class="table-row-time">
+                                <div class="table-cell timeofday_cell" title="05 марта 23:00 (время местное)">
+                                    <div class="timeofday_div">вечер</div>
+                                    <div class="timeofday">23:00</div>
+                                </div>
+
+                                <div class="table-cell temperature_cell" title="05 марта 23:00
+Температура: -19.1 .. -10.2 °C 
+Осадки: без осадков
+Облачность: переменная облачность
+Ветер: легкий ветер, восточный, 3 м/с 
+Влажность: 97 %
+Давление: 750 мм рт.ст.
+Видимость: 19 км.
+УФ-индекс: 0
+">-19°</div>
+
+                                <div class="table-cell cloud_cell" title="Общая облачность: 31%
+ Верхняя облачность: 5%
+ Средняя облачность: 0%
+ Нижняя облачность: 31%
+Осадки: 0мм">
+                                    <div class="cloud_image_div cloud_moon_1_3"></div>
+                                </div>
+
+                                <div class="table-cell cloud_text_cell" title="переменная облачность, без осадков">
+                                    <div class="cloud_text_div">переменная облачность, без осадков</div>
+                                </div>
+
+                                <div class="table-cell wind_cell" title="Ветер: 2.5 м/с
+легкий ветер, восточный ">
+                                    <div class="wind_image_div wind_E"></div>
+                                    <div class="wind_socr_text_div">В</div>
+                                </div>
+
+                                <div class="table-cell wind_ms_cell" title="Ветер: 2.5 м/с
+ легкий ветер, восточный">3 м/с </div>
+
+
+                                <div class="table-cell pres_text_cell" title="Давление: 750 мм рт.ст.">750 мм</div>
+                                <div class="table-cell rh_text_cell" title="Относительная влажность воздуха: 97%">97%</div>
+                            </div>
+                        </div>
+                        <div class="table-cell-day moon_cell">
+
+                            <div class="moon_div">
+                                <div class="sunrise_miniimage"></div>
+                                <div class="sunrise_set" title="Восход и закат солнца">
+                                    Восход: 07:58<br/> Закат: 18:54 </div>
+
+                                <div class="moon_miniimage"></div>
+                                <div class="moon_text" title="убывающая луна, третья фаза (рассеивающая луна)
+. Видимость луны: 87%
+ 17 лунный день">17 день<br/> Видимость 87%
+                                </div>
+                                <div class="moon_image moon6" title="убывающая луна, третья фаза (рассеивающая луна)
+ Видимость луны: 87%
+ 17 лунный день">
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="table-row-day dayline">
+
+                        <div class="table-cell-day dayweek">
+                            <div class="dayweek_date">06 марта</div>
+                            <div class="dayweek_week">Пт</div>
+                        </div>
+
+                        <div class="table-cell-day times">
+                            <div class="table-row-time">
+                                <div class="table-cell timeofday_cell" title="06 марта 05:00 (время местное)">
+                                    <div class="timeofday_div">ночь</div>
+                                    <div class="timeofday">05:00</div>
+                                </div>
+
+                                <div class="table-cell temperature_cell" title="06 марта 05:00
+Температура: -23.8 .. -19.1 °C 
+Осадки: без осадков
+Облачность: небольшая облачность
+Ветер: легкий ветер, восточный, 2 м/с 
+Влажность: 99 %
+Давление: 749 мм рт.ст.
+Видимость: 19 км.
+УФ-индекс: 0
+">-24°</div>
+
+                                <div class="table-cell cloud_cell" title="Общая облачность: 29%
+ Верхняя облачность: 5%
+ Средняя облачность: 0%
+ Нижняя облачность: 29%
+Осадки: 0мм">
+                                    <div class="cloud_image_div cloud_moon_1_2"></div>
+                                </div>
+
+                                <div class="table-cell cloud_text_cell" title="небольшая облачность, без осадков">
+                                    <div class="cloud_text_div">небольшая облачность, без осадков</div>
+                                </div>
+
+                                <div class="table-cell wind_cell" title="Ветер: 2.1 м/с
+легкий ветер, восточный ">
+                                    <div class="wind_image_div wind_E"></div>
+                                    <div class="wind_socr_text_div">В</div>
+                                </div>
+
+                                <div class="table-cell wind_ms_cell" title="Ветер: 2.1 м/с
+ легкий ветер, восточный">2 м/с </div>
+
+
+                                <div class="table-cell pres_text_cell" title="Давление: 749 мм рт.ст.">749 мм</div>
+                                <div class="table-cell rh_text_cell" title="Относительная влажность воздуха: 99%">99%</div>
+                            </div>
+                            <div class="table-row-time">
+                                <div class="table-cell timeofday_cell" title="06 марта 11:00 (время местное)">
+                                    <div class="timeofday_div">утро</div>
+                                    <div class="timeofday">11:00</div>
+                                </div>
+
+                                <div class="table-cell temperature_cell" title="06 марта 11:00
+Температура: -25.4 .. -15.6 °C 
+Осадки: без осадков
+Облачность: значительная облачность
+Ветер: легкий ветер, восточный, 2 м/с 
+Влажность: 91 %
+Давление: 748 мм рт.ст.
+Видимость: 20 км.
+УФ-индекс: 0.7
+">-16°</div>
+
+                                <div class="table-cell cloud_cell" title="Общая облачность: 82%
+ Верхняя облачность: 7%
+ Средняя облачность: 79%
+ Нижняя облачность: 73%
+Осадки: 0мм">
+                                    <div class="cloud_image_div cloud_sun_1_5"></div>
+                                </div>
+
+                                <div class="table-cell cloud_text_cell" title="значительная облачность, без осадков">
+                                    <div class="cloud_text_div">значительная облачность, без осадков</div>
+                                </div>
+
+                                <div class="table-cell wind_cell" title="Ветер: 2.3 м/с
+легкий ветер, восточный ">
+                                    <div class="wind_image_div wind_E"></div>
+                                    <div class="wind_socr_text_div">В</div>
+                                </div>
+
+                                <div class="table-cell wind_ms_cell" title="Ветер: 2.3 м/с
+ легкий ветер, восточный">2 м/с </div>
+
+
+                                <div class="table-cell pres_text_cell" title="Давление: 748 мм рт.ст.">748 мм</div>
+                                <div class="table-cell rh_text_cell" title="Относительная влажность воздуха: 91%">91%</div>
+                            </div>
+                            <div class="table-row-time">
+                                <div class="table-cell timeofday_cell" title="06 марта 17:00 (время местное)">
+                                    <div class="timeofday_div">день</div>
+                                    <div class="timeofday">17:00</div>
+                                </div>
+
+                                <div class="table-cell temperature_cell" title="06 марта 17:00
+Температура: -15.5 .. -8.3 °C 
+Осадки: возможен небольшой снег
+Облачность: пасмурно
+Ветер: легкий ветер, северный,северо-восточный, 2 м/с 
+Влажность: 93 %
+Давление: 746 мм рт.ст.
+Видимость: 200 м.
+УФ-индекс: 0.4
+">-8°</div>
+
+                                <div class="table-cell cloud_cell" title="Общая облачность: 100%
+ Верхняя облачность: 54%
+ Средняя облачность: 100%
+ Нижняя облачность: 100%
+Осадки: 0.19мм">
+                                    <div class="cloud_image_div cloud_sun_4_4"></div>
+                                </div>
+
+                                <div class="table-cell cloud_text_cell" title="пасмурно, возможен небольшой снег">
+                                    <div class="cloud_text_div">пасмурно, возможен небольшой снег</div>
+                                </div>
+
+                                <div class="table-cell wind_cell" title="Ветер: 1.8 м/с
+легкий ветер, северный,северо-восточный ">
+                                    <div class="wind_image_div wind_NNE"></div>
+                                    <div class="wind_socr_text_div">С,С-В</div>
+                                </div>
+
+                                <div class="table-cell wind_ms_cell" title="Ветер: 1.8 м/с
+ легкий ветер, северный,северо-восточный">2 м/с </div>
+
+
+                                <div class="table-cell pres_text_cell" title="Давление: 746 мм рт.ст.">746 мм</div>
+                                <div class="table-cell rh_text_cell" title="Относительная влажность воздуха: 93%">93%</div>
+                            </div>
+                            <div class="table-row-time">
+                                <div class="table-cell timeofday_cell" title="06 марта 23:00 (время местное)">
+                                    <div class="timeofday_div">вечер</div>
+                                    <div class="timeofday">23:00</div>
+                                </div>
+
+                                <div class="table-cell temperature_cell" title="06 марта 23:00
+Температура: -14.7 .. -8.4 °C 
+Осадки: небольшой снег
+Облачность: пасмурно
+Ветер: легкий ветер, северный,северо-западный, 2 м/с 
+Влажность: 97 %
+Давление: 745 мм рт.ст.
+Видимость: 2 км.
+УФ-индекс: 0
+">-15°</div>
+
+                                <div class="table-cell cloud_cell" title="Общая облачность: 98%
+ Верхняя облачность: 0%
+ Средняя облачность: 40%
+ Нижняя облачность: 98%
+Осадки: 0.49мм">
+                                    <div class="cloud_image_div cloud_moon_4_4"></div>
+                                </div>
+
+                                <div class="table-cell cloud_text_cell" title="пасмурно, небольшой снег">
+                                    <div class="cloud_text_div">пасмурно, небольшой снег</div>
+                                </div>
+
+                                <div class="table-cell wind_cell" title="Ветер: 2 м/с
+легкий ветер, северный,северо-западный ">
+                                    <div class="wind_image_div wind_NNW"></div>
+                                    <div class="wind_socr_text_div">С,С-З</div>
+                                </div>
+
+                                <div class="table-cell wind_ms_cell" title="Ветер: 2 м/с
+ легкий ветер, северный,северо-западный">2 м/с </div>
+
+
+                                <div class="table-cell pres_text_cell" title="Давление: 745 мм рт.ст.">745 мм</div>
+                                <div class="table-cell rh_text_cell" title="Относительная влажность воздуха: 97%">97%</div>
+                            </div>
+                        </div>
+                        <div class="table-cell-day moon_cell">
+
+                            <div class="moon_div">
+                                <div class="sunrise_miniimage"></div>
+                                <div class="sunrise_set" title="Восход и закат солнца">
+                                    Восход: 07:55<br/> Закат: 18:56 </div>
+
+                                <div class="moon_miniimage"></div>
+                                <div class="moon_text" title="убывающая луна, третья фаза (рассеивающая луна)
+. Видимость луны: 80%
+ 18 лунный день">18 день<br/> Видимость 80%
+                                </div>
+                                <div class="moon_image moon6" title="убывающая луна, третья фаза (рассеивающая луна)
+ Видимость луны: 80%
+ 18 лунный день">
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="table-row-day dayline">
+
+                        <div class="table-cell-day dayweek">
+                            <div class="dayweek_weekend">07 марта</div>
+                            <div class="dayweek_week">Сб</div>
+                        </div>
+
+                        <div class="table-cell-day times">
+                            <div class="table-row-time">
+                                <div class="table-cell timeofday_cell" title="07 марта 05:00 (время местное)">
+                                    <div class="timeofday_div">ночь</div>
+                                    <div class="timeofday">05:00</div>
+                                </div>
+
+                                <div class="table-cell temperature_cell" title="07 марта 05:00
+Температура: -19.9 .. -14.5 °C 
+Осадки: возможен небольшой снег
+Облачность: значительная облачность
+Ветер: легкий ветер, западный, 2 м/с 
+Влажность: 100 %
+Давление: 746 мм рт.ст.
+Видимость: 3 км.
+УФ-индекс: 0
+">-20°</div>
+
+                                <div class="table-cell cloud_cell" title="Общая облачность: 89%
+ Верхняя облачность: 0%
+ Средняя облачность: 4%
+ Нижняя облачность: 89%
+Осадки: 0.06мм">
+                                    <div class="cloud_image_div cloud_moon_4_4"></div>
+                                </div>
+
+                                <div class="table-cell cloud_text_cell" title="значительная облачность, возможен небольшой снег">
+                                    <div class="cloud_text_div">значительная облачность, возможен небольшой снег</div>
+                                </div>
+
+                                <div class="table-cell wind_cell" title="Ветер: 1.7 м/с
+легкий ветер, западный ">
+                                    <div class="wind_image_div wind_W"></div>
+                                    <div class="wind_socr_text_div">З</div>
+                                </div>
+
+                                <div class="table-cell wind_ms_cell" title="Ветер: 1.7 м/с
+ легкий ветер, западный">2 м/с </div>
+
+
+                                <div class="table-cell pres_text_cell" title="Давление: 746 мм рт.ст.">746 мм</div>
+                                <div class="table-cell rh_text_cell" title="Относительная влажность воздуха: 100%">100%</div>
+                            </div>
+                            <div class="table-row-time">
+                                <div class="table-cell timeofday_cell" title="07 марта 11:00 (время местное)">
+                                    <div class="timeofday_div">утро</div>
+                                    <div class="timeofday">11:00</div>
+                                </div>
+
+                                <div class="table-cell temperature_cell" title="07 марта 11:00
+Температура: -22.3 .. -14.8 °C 
+Осадки: возможен небольшой снег
+Облачность: пасмурно
+Ветер: легкий ветер, западный, 2 м/с 
+Влажность: 95 %
+Давление: 746 мм рт.ст.
+Видимость: 2 км.
+УФ-индекс: 0.2
+">-15°</div>
+
+                                <div class="table-cell cloud_cell" title="Общая облачность: 100%
+ Верхняя облачность: 17%
+ Средняя облачность: 24%
+ Нижняя облачность: 100%
+Осадки: 0.12мм">
+                                    <div class="cloud_image_div cloud_sun_4_4"></div>
+                                </div>
+
+                                <div class="table-cell cloud_text_cell" title="пасмурно, возможен небольшой снег">
+                                    <div class="cloud_text_div">пасмурно, возможен небольшой снег</div>
+                                </div>
+
+                                <div class="table-cell wind_cell" title="Ветер: 2.3 м/с
+легкий ветер, западный ">
+                                    <div class="wind_image_div wind_W"></div>
+                                    <div class="wind_socr_text_div">З</div>
+                                </div>
+
+                                <div class="table-cell wind_ms_cell" title="Ветер: 2.3 м/с
+ легкий ветер, западный">2 м/с </div>
+
+
+                                <div class="table-cell pres_text_cell" title="Давление: 746 мм рт.ст.">746 мм</div>
+                                <div class="table-cell rh_text_cell" title="Относительная влажность воздуха: 95%">95%</div>
+                            </div>
+                            <div class="table-row-time">
+                                <div class="table-cell timeofday_cell" title="07 марта 17:00 (время местное)">
+                                    <div class="timeofday_div">день</div>
+                                    <div class="timeofday">17:00</div>
+                                </div>
+
+                                <div class="table-cell temperature_cell" title="07 марта 17:00
+Температура: -14.7 .. -9.7 °C 
+Осадки: небольшой снег
+Облачность: пасмурно
+Ветер: слабый ветер, южный, 4 м/с 
+Влажность: 94 %
+Давление: 741 мм рт.ст.
+Видимость: 200 м.
+УФ-индекс: 0.9
+">-10°</div>
+
+                                <div class="table-cell cloud_cell" title="Общая облачность: 100%
+ Верхняя облачность: 100%
+ Средняя облачность: 100%
+ Нижняя облачность: 100%
+Осадки: 0.63мм">
+                                    <div class="cloud_image_div cloud_sun_4_4"></div>
+                                </div>
+
+                                <div class="table-cell cloud_text_cell" title="пасмурно, небольшой снег">
+                                    <div class="cloud_text_div">пасмурно, небольшой снег</div>
+                                </div>
+
+                                <div class="table-cell wind_cell" title="Ветер: 4.1 м/с
+слабый ветер, южный ">
+                                    <div class="wind_image_div wind_S"></div>
+                                    <div class="wind_socr_text_div">Ю</div>
+                                </div>
+
+                                <div class="table-cell wind_ms_cell" title="Ветер: 4.1 м/с
+ слабый ветер, южный">4 м/с </div>
+
+
+                                <div class="table-cell pres_text_cell" title="Давление: 741 мм рт.ст.">741 мм</div>
+                                <div class="table-cell rh_text_cell" title="Относительная влажность воздуха: 94%">94%</div>
+                            </div>
+                            <div class="table-row-time">
+                                <div class="table-cell timeofday_cell" title="07 марта 23:00 (время местное)">
+                                    <div class="timeofday_div">вечер</div>
+                                    <div class="timeofday">23:00</div>
+                                </div>
+
+                                <div class="table-cell temperature_cell" title="07 марта 23:00
+Температура: -10 .. -8.3 °C 
+Осадки: снегопад
+Облачность: пасмурно
+Ветер: слабый ветер, южный, 4 м/с 
+Влажность: 95 %
+Давление: 735 мм рт.ст.
+Видимость: 100 м.
+УФ-индекс: 0
+">-8°</div>
+
+                                <div class="table-cell cloud_cell" title="Общая облачность: 100%
+ Верхняя облачность: 0%
+ Средняя облачность: 100%
+ Нижняя облачность: 100%
+Осадки: 5.49мм">
+                                    <div class="cloud_image_div cloud_moon_41_4"></div>
+                                </div>
+
+                                <div class="table-cell cloud_text_cell" title="пасмурно, снегопад">
+                                    <div class="cloud_text_div">пасмурно, снегопад</div>
+                                </div>
+
+                                <div class="table-cell wind_cell" title="Ветер: 4 м/с
+слабый ветер, южный ">
+                                    <div class="wind_image_div wind_S"></div>
+                                    <div class="wind_socr_text_div">Ю</div>
+                                </div>
+
+                                <div class="table-cell wind_ms_cell" title="Ветер: 4 м/с
+ слабый ветер, южный">4 м/с </div>
+
+
+                                <div class="table-cell pres_text_cell" title="Давление: 735 мм рт.ст.">735 мм</div>
+                                <div class="table-cell rh_text_cell" title="Относительная влажность воздуха: 95%">95%</div>
+                            </div>
+                        </div>
+                        <div class="table-cell-day moon_cell">
+
+                            <div class="moon_div">
+                                <div class="sunrise_miniimage"></div>
+                                <div class="sunrise_set" title="Восход и закат солнца">
+                                    Восход: 07:53<br/> Закат: 18:58 </div>
+
+                                <div class="moon_miniimage"></div>
+                                <div class="moon_text" title="убывающая луна, третья фаза (рассеивающая луна)
+. Видимость луны: 73%
+ 19 лунный день">19 день<br/> Видимость 73%
+                                </div>
+                                <div class="moon_image moon6" title="убывающая луна, третья фаза (рассеивающая луна)
+ Видимость луны: 73%
+ 19 лунный день">
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <div id="cYTI1fGU0fGYx" style="border-width: 0!important;">
+                    <!-- Yandex.RTB R-A-186487-2 -->
+                    <div id="yandex_rtb_R-A-186487-2"></div>
+                    <script>
+                        window.yaContextCb.push(() => {
+                            Ya.Context.AdvManager.render({
+                                "blockId": "R-A-186487-2",
+                                "renderTo": "yandex_rtb_R-A-186487-2"
+                            })
+                        })
+                    </script>
+                </div>
+
+                <div class="forecast-table">
+
+                    <div class="table-row-day dayline">
+
+                        <div class="table-cell-day dayweek">
+                            <div class="dayweek_weekend">08 марта</div>
+                            <div class="dayweek_week">Вс</div>
+                        </div>
+
+                        <div class="table-cell-day times">
+                            <div class="table-row-time">
+                                <div class="table-cell timeofday_cell" title="08 марта 05:00 (время местное)">
+                                    <div class="timeofday_div">ночь</div>
+                                    <div class="timeofday">05:00</div>
+                                </div>
+
+                                <div class="table-cell temperature_cell" title="08 марта 05:00
+Температура: -13.9 .. -6.4 °C 
+Осадки: сильный снегопад
+Облачность: пасмурно
+Ветер: слабый ветер, северо-восточный, 5 м/с 
+Влажность: 96 %
+Давление: 733 мм рт.ст.
+Видимость: 100 м.
+УФ-индекс: 0
+">-14°</div>
+
+                                <div class="table-cell cloud_cell" title="Общая облачность: 100%
+ Верхняя облачность: 0%
+ Средняя облачность: 100%
+ Нижняя облачность: 100%
+Осадки: 6.8мм">
+                                    <div class="cloud_image_div cloud_moon_41_4"></div>
+                                </div>
+
+                                <div class="table-cell cloud_text_cell" title="пасмурно, сильный снегопад">
+                                    <div class="cloud_text_div">пасмурно, сильный снегопад</div>
+                                </div>
+
+                                <div class="table-cell wind_cell" title="Ветер: 5.3 м/с
+слабый ветер, северо-восточный ">
+                                    <div class="wind_image_div wind_NE"></div>
+                                    <div class="wind_socr_text_div">С-В</div>
+                                </div>
+
+                                <div class="table-cell wind_ms_cell" title="Ветер: 5.3 м/с
+ слабый ветер, северо-восточный">5 м/с </div>
+
+
+                                <div class="table-cell pres_text_cell" title="Давление: 733 мм рт.ст.">733 мм</div>
+                                <div class="table-cell rh_text_cell" title="Относительная влажность воздуха: 96%">96%</div>
+                            </div>
+                            <div class="table-row-time">
+                                <div class="table-cell timeofday_cell" title="08 марта 11:00 (время местное)">
+                                    <div class="timeofday_div">утро</div>
+                                    <div class="timeofday">11:00</div>
+                                </div>
+
+                                <div class="table-cell temperature_cell" title="08 марта 11:00
+Температура: -20.5 .. -13.9 °C 
+Осадки: снегопад
+Облачность: пасмурно
+Ветер: умеренный ветер, северный,северо-восточный, 6 м/с 
+Влажность: 94 %
+Давление: 740 мм рт.ст.
+Видимость: 300 м.
+УФ-индекс: 0.1
+">-20°</div>
+
+                                <div class="table-cell cloud_cell" title="Общая облачность: 100%
+ Верхняя облачность: 0%
+ Средняя облачность: 100%
+ Нижняя облачность: 100%
+Осадки: 2.14мм">
+                                    <div class="cloud_image_div cloud_sun_41_4"></div>
+                                </div>
+
+                                <div class="table-cell cloud_text_cell" title="пасмурно, снегопад">
+                                    <div class="cloud_text_div">пасмурно, снегопад</div>
+                                </div>
+
+                                <div class="table-cell wind_cell" title="Ветер: 6.1 м/с
+умеренный ветер, северный,северо-восточный ">
+                                    <div class="wind_image_div wind_NNE"></div>
+                                    <div class="wind_socr_text_div">С,С-В</div>
+                                </div>
+
+                                <div class="table-cell wind_ms_cell" title="Ветер: 6.1 м/с
+ умеренный ветер, северный,северо-восточный">6 м/с </div>
+
+
+                                <div class="table-cell pres_text_cell" title="Давление: 740 мм рт.ст.">740 мм</div>
+                                <div class="table-cell rh_text_cell" title="Относительная влажность воздуха: 94%">94%</div>
+                            </div>
+                            <div class="table-row-time">
+                                <div class="table-cell timeofday_cell" title="08 марта 17:00 (время местное)">
+                                    <div class="timeofday_div">день</div>
+                                    <div class="timeofday">17:00</div>
+                                </div>
+
+                                <div class="table-cell temperature_cell" title="08 марта 17:00
+Температура: -20.2 .. -19.1 °C 
+Осадки: небольшой снег
+Облачность: пасмурно
+Ветер: слабый ветер, северный,северо-восточный, 5 м/с 
+Влажность: 94 %
+Давление: 745 мм рт.ст.
+Видимость: 200 м.
+УФ-индекс: 0.7
+">-19°</div>
+
+                                <div class="table-cell cloud_cell" title="Общая облачность: 100%
+ Верхняя облачность: 0%
+ Средняя облачность: 100%
+ Нижняя облачность: 100%
+Осадки: 1.07мм">
+                                    <div class="cloud_image_div cloud_sun_4_4"></div>
+                                </div>
+
+                                <div class="table-cell cloud_text_cell" title="пасмурно, небольшой снег">
+                                    <div class="cloud_text_div">пасмурно, небольшой снег</div>
+                                </div>
+
+                                <div class="table-cell wind_cell" title="Ветер: 5.1 м/с
+слабый ветер, северный,северо-восточный ">
+                                    <div class="wind_image_div wind_NNE"></div>
+                                    <div class="wind_socr_text_div">С,С-В</div>
+                                </div>
+
+                                <div class="table-cell wind_ms_cell" title="Ветер: 5.1 м/с
+ слабый ветер, северный,северо-восточный">5 м/с </div>
+
+
+                                <div class="table-cell pres_text_cell" title="Давление: 745 мм рт.ст.">745 мм</div>
+                                <div class="table-cell rh_text_cell" title="Относительная влажность воздуха: 94%">94%</div>
+                            </div>
+                            <div class="table-row-time">
+                                <div class="table-cell timeofday_cell" title="08 марта 23:00 (время местное)">
+                                    <div class="timeofday_div">вечер</div>
+                                    <div class="timeofday">23:00</div>
+                                </div>
+
+                                <div class="table-cell temperature_cell" title="08 марта 23:00
+Температура: -23 .. -19.2 °C 
+Осадки: небольшой снег
+Облачность: пасмурно
+Ветер: слабый ветер, северный, 5 м/с 
+Влажность: 95 %
+Давление: 749 мм рт.ст.
+Видимость: 500 м.
+УФ-индекс: 0
+">-23°</div>
+
+                                <div class="table-cell cloud_cell" title="Общая облачность: 100%
+ Верхняя облачность: 0%
+ Средняя облачность: 100%
+ Нижняя облачность: 100%
+Осадки: 0.74мм">
+                                    <div class="cloud_image_div cloud_moon_4_4"></div>
+                                </div>
+
+                                <div class="table-cell cloud_text_cell" title="пасмурно, небольшой снег">
+                                    <div class="cloud_text_div">пасмурно, небольшой снег</div>
+                                </div>
+
+                                <div class="table-cell wind_cell" title="Ветер: 4.7 м/с
+слабый ветер, северный ">
+                                    <div class="wind_image_div wind_N"></div>
+                                    <div class="wind_socr_text_div">С</div>
+                                </div>
+
+                                <div class="table-cell wind_ms_cell" title="Ветер: 4.7 м/с
+ слабый ветер, северный">5 м/с </div>
+
+
+                                <div class="table-cell pres_text_cell" title="Давление: 749 мм рт.ст.">749 мм</div>
+                                <div class="table-cell rh_text_cell" title="Относительная влажность воздуха: 95%">95%</div>
+                            </div>
+                        </div>
+                        <div class="table-cell-day moon_cell">
+
+                            <div class="moon_div">
+                                <div class="sunrise_miniimage"></div>
+                                <div class="sunrise_set" title="Восход и закат солнца">
+                                    Восход: 07:50<br/> Закат: 19:01 </div>
+
+                                <div class="moon_miniimage"></div>
+                                <div class="moon_text" title="убывающая луна, третья фаза (рассеивающая луна)
+. Видимость луны: 66%
+ 20 лунный день">20 день<br/> Видимость 66%
+                                </div>
+                                <div class="moon_image moon6" title="убывающая луна, третья фаза (рассеивающая луна)
+ Видимость луны: 66%
+ 20 лунный день">
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="table-row-day dayline">
+
+                        <div class="table-cell-day dayweek">
+                            <div class="dayweek_date">09 марта</div>
+                            <div class="dayweek_week">Пн</div>
+                        </div>
+
+                        <div class="table-cell-day times">
+                            <div class="table-row-time">
+                                <div class="table-cell timeofday_cell" title="09 марта 05:00 (время местное)">
+                                    <div class="timeofday_div">ночь</div>
+                                    <div class="timeofday">05:00</div>
+                                </div>
+
+                                <div class="table-cell temperature_cell" title="09 марта 05:00
+Температура: -23.8 .. -22.8 °C 
+Осадки: небольшой снег
+Облачность: пасмурно
+Ветер: слабый ветер, северный, 5 м/с 
+Влажность: 93 %
+Давление: 752 мм рт.ст.
+Видимость: 900 м.
+УФ-индекс: 0
+">-24°</div>
+
+                                <div class="table-cell cloud_cell" title="Общая облачность: 100%
+ Верхняя облачность: 0%
+ Средняя облачность: 100%
+ Нижняя облачность: 100%
+Осадки: 0.37мм">
+                                    <div class="cloud_image_div cloud_moon_4_4"></div>
+                                </div>
+
+                                <div class="table-cell cloud_text_cell" title="пасмурно, небольшой снег">
+                                    <div class="cloud_text_div">пасмурно, небольшой снег</div>
+                                </div>
+
+                                <div class="table-cell wind_cell" title="Ветер: 4.9 м/с
+слабый ветер, северный ">
+                                    <div class="wind_image_div wind_N"></div>
+                                    <div class="wind_socr_text_div">С</div>
+                                </div>
+
+                                <div class="table-cell wind_ms_cell" title="Ветер: 4.9 м/с
+ слабый ветер, северный">5 м/с </div>
+
+
+                                <div class="table-cell pres_text_cell" title="Давление: 752 мм рт.ст.">752 мм</div>
+                                <div class="table-cell rh_text_cell" title="Относительная влажность воздуха: 93%">93%</div>
+                            </div>
+                            <div class="table-row-time">
+                                <div class="table-cell timeofday_cell" title="09 марта 11:00 (время местное)">
+                                    <div class="timeofday_div">утро</div>
+                                    <div class="timeofday">11:00</div>
+                                </div>
+
+                                <div class="table-cell temperature_cell" title="09 марта 11:00
+Температура: -24.9 .. -23.6 °C 
+Осадки: возможен небольшой снег
+Облачность: пасмурно
+Ветер: слабый ветер, северный, 5 м/с 
+Влажность: 89 %
+Давление: 755 мм рт.ст.
+Видимость: 9 км.
+УФ-индекс: 0.1
+">-24°</div>
+
+                                <div class="table-cell cloud_cell" title="Общая облачность: 95%
+ Верхняя облачность: 0%
+ Средняя облачность: 92%
+ Нижняя облачность: 95%
+Осадки: 0.15мм">
+                                    <div class="cloud_image_div cloud_sun_4_4"></div>
+                                </div>
+
+                                <div class="table-cell cloud_text_cell" title="пасмурно, возможен небольшой снег">
+                                    <div class="cloud_text_div">пасмурно, возможен небольшой снег</div>
+                                </div>
+
+                                <div class="table-cell wind_cell" title="Ветер: 4.7 м/с
+слабый ветер, северный ">
+                                    <div class="wind_image_div wind_N"></div>
+                                    <div class="wind_socr_text_div">С</div>
+                                </div>
+
+                                <div class="table-cell wind_ms_cell" title="Ветер: 4.7 м/с
+ слабый ветер, северный">5 м/с </div>
+
+
+                                <div class="table-cell pres_text_cell" title="Давление: 755 мм рт.ст.">755 мм</div>
+                                <div class="table-cell rh_text_cell" title="Относительная влажность воздуха: 89%">89%</div>
+                            </div>
+                            <div class="table-row-time">
+                                <div class="table-cell timeofday_cell" title="09 марта 17:00 (время местное)">
+                                    <div class="timeofday_div">день</div>
+                                    <div class="timeofday">17:00</div>
+                                </div>
+
+                                <div class="table-cell temperature_cell" title="09 марта 17:00
+Температура: -24.2 .. -19 °C 
+Осадки: без осадков
+Облачность: пасмурно
+Ветер: слабый ветер, северный, 4 м/с 
+Влажность: 84 %
+Давление: 757 мм рт.ст.
+Видимость: 17 км.
+УФ-индекс: 1.2
+">-19°</div>
+
+                                <div class="table-cell cloud_cell" title="Общая облачность: 100%
+ Верхняя облачность: 0%
+ Средняя облачность: 0%
+ Нижняя облачность: 100%
+Осадки: 0мм">
+                                    <div class="cloud_image_div cloud_sun_1_5"></div>
+                                </div>
+
+                                <div class="table-cell cloud_text_cell" title="пасмурно, без осадков">
+                                    <div class="cloud_text_div">пасмурно, без осадков</div>
+                                </div>
+
+                                <div class="table-cell wind_cell" title="Ветер: 4 м/с
+слабый ветер, северный ">
+                                    <div class="wind_image_div wind_N"></div>
+                                    <div class="wind_socr_text_div">С</div>
+                                </div>
+
+                                <div class="table-cell wind_ms_cell" title="Ветер: 4 м/с
+ слабый ветер, северный">4 м/с </div>
+
+
+                                <div class="table-cell pres_text_cell" title="Давление: 757 мм рт.ст.">757 мм</div>
+                                <div class="table-cell rh_text_cell" title="Относительная влажность воздуха: 84%">84%</div>
+                            </div>
+                            <div class="table-row-time">
+                                <div class="table-cell timeofday_cell" title="09 марта 23:00 (время местное)">
+                                    <div class="timeofday_div">вечер</div>
+                                    <div class="timeofday">23:00</div>
+                                </div>
+
+                                <div class="table-cell temperature_cell" title="09 марта 23:00
+Температура: -30.2 .. -19.2 °C 
+Осадки: без осадков
+Облачность: облачно
+Ветер: легкий ветер, западный,северо-западный, 1 м/с 
+Влажность: 100 %
+Давление: 759 мм рт.ст.
+Видимость: 10 км.
+УФ-индекс: 0.1
+">-30°</div>
+
+                                <div class="table-cell cloud_cell" title="Общая облачность: 71%
+ Верхняя облачность: 0%
+ Средняя облачность: 0%
+ Нижняя облачность: 71%
+Осадки: 0мм">
+                                    <div class="cloud_image_div cloud_moon_1_4"></div>
+                                </div>
+
+                                <div class="table-cell cloud_text_cell" title="облачно, без осадков">
+                                    <div class="cloud_text_div">облачно, без осадков</div>
+                                </div>
+
+                                <div class="table-cell wind_cell" title="Ветер: 1.4 м/с
+легкий ветер, западный,северо-западный ">
+                                    <div class="wind_image_div wind_WNW"></div>
+                                    <div class="wind_socr_text_div">З,С-З</div>
+                                </div>
+
+                                <div class="table-cell wind_ms_cell" title="Ветер: 1.4 м/с
+ легкий ветер, западный,северо-западный">1 м/с </div>
+
+
+                                <div class="table-cell pres_text_cell" title="Давление: 759 мм рт.ст.">759 мм</div>
+                                <div class="table-cell rh_text_cell" title="Относительная влажность воздуха: 100%">100%</div>
+                            </div>
+                        </div>
+                        <div class="table-cell-day moon_cell">
+
+                            <div class="moon_div">
+                                <div class="sunrise_miniimage"></div>
+                                <div class="sunrise_set" title="Восход и закат солнца">
+                                    Восход: 07:47<br/> Закат: 19:03 </div>
+
+                                <div class="moon_miniimage"></div>
+                                <div class="moon_text" title="убывающая луна, третья четверть
+. Видимость луны: 60%
+ 21 лунный день">21 день<br/> Видимость 60%
+                                </div>
+                                <div class="moon_image moon7" title="убывающая луна, третья четверть
+ Видимость луны: 60%
+ 21 лунный день">
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="table-row-day dayline">
+
+                        <div class="table-cell-day dayweek">
+                            <div class="dayweek_date">10 марта</div>
+                            <div class="dayweek_week">Вт</div>
+                        </div>
+
+                        <div class="table-cell-day times">
+                            <div class="table-row-time">
+                                <div class="table-cell timeofday_cell" title="10 марта 05:00 (время местное)">
+                                    <div class="timeofday_div">ночь</div>
+                                    <div class="timeofday">05:00</div>
+                                </div>
+
+                                <div class="table-cell temperature_cell" title="10 марта 05:00
+Температура: -34.8 .. -30.3 °C 
+Осадки: без осадков
+Облачность: пасмурно
+Ветер: легкий ветер, западный, 1 м/с 
+Влажность: 100 %
+Давление: 759 мм рт.ст.
+Видимость: 3 км.
+УФ-индекс: 0
+">-34°</div>
+
+                                <div class="table-cell cloud_cell" title="Общая облачность: 100%
+ Верхняя облачность: 7%
+ Средняя облачность: 5%
+ Нижняя облачность: 100%
+Осадки: 0мм">
+                                    <div class="cloud_image_div cloud_moon_1_5"></div>
+                                </div>
+
+                                <div class="table-cell cloud_text_cell" title="пасмурно, без осадков">
+                                    <div class="cloud_text_div">пасмурно, без осадков</div>
+                                </div>
+
+                                <div class="table-cell wind_cell" title="Ветер: 1.3 м/с
+легкий ветер, западный ">
+                                    <div class="wind_image_div wind_W"></div>
+                                    <div class="wind_socr_text_div">З</div>
+                                </div>
+
+                                <div class="table-cell wind_ms_cell" title="Ветер: 1.3 м/с
+ легкий ветер, западный">1 м/с </div>
+
+
+                                <div class="table-cell pres_text_cell" title="Давление: 759 мм рт.ст.">759 мм</div>
+                                <div class="table-cell rh_text_cell" title="Относительная влажность воздуха: 100%">100%</div>
+                            </div>
+                            <div class="table-row-time">
+                                <div class="table-cell timeofday_cell" title="10 марта 11:00 (время местное)">
+                                    <div class="timeofday_div">утро</div>
+                                    <div class="timeofday">11:00</div>
+                                </div>
+
+                                <div class="table-cell temperature_cell" title="10 марта 11:00
+Температура: -34 .. -18.9 °C 
+Осадки: возможен небольшой снег
+Облачность: пасмурно
+Ветер: слабый ветер, западный,юго-западный, 4 м/с 
+Влажность: 95 %
+Давление: 756 мм рт.ст.
+Видимость: 8 км.
+УФ-индекс: 0.2
+">-19°</div>
+
+                                <div class="table-cell cloud_cell" title="Общая облачность: 100%
+ Верхняя облачность: 100%
+ Средняя облачность: 100%
+ Нижняя облачность: 100%
+Осадки: 0.06мм">
+                                    <div class="cloud_image_div cloud_sun_4_4"></div>
+                                </div>
+
+                                <div class="table-cell cloud_text_cell" title="пасмурно, возможен небольшой снег">
+                                    <div class="cloud_text_div">пасмурно, возможен небольшой снег</div>
+                                </div>
+
+                                <div class="table-cell wind_cell" title="Ветер: 4.4 м/с
+слабый ветер, западный,юго-западный ">
+                                    <div class="wind_image_div wind_WSW"></div>
+                                    <div class="wind_socr_text_div">З,Ю-З</div>
+                                </div>
+
+                                <div class="table-cell wind_ms_cell" title="Ветер: 4.4 м/с
+ слабый ветер, западный,юго-западный">4 м/с </div>
+
+
+                                <div class="table-cell pres_text_cell" title="Давление: 756 мм рт.ст.">756 мм</div>
+                                <div class="table-cell rh_text_cell" title="Относительная влажность воздуха: 95%">95%</div>
+                            </div>
+                            <div class="table-row-time">
+                                <div class="table-cell timeofday_cell" title="10 марта 17:00 (время местное)">
+                                    <div class="timeofday_div">день</div>
+                                    <div class="timeofday">17:00</div>
+                                </div>
+
+                                <div class="table-cell temperature_cell" title="10 марта 17:00
+Температура: -18.8 .. -11.6 °C 
+Осадки: небольшой снег
+Облачность: пасмурно
+Ветер: умеренный ветер, западный,юго-западный, 6 м/с 
+Влажность: 92 %
+Давление: 750 мм рт.ст.
+Видимость: 200 м.
+УФ-индекс: 0.8
+">-12°</div>
+
+                                <div class="table-cell cloud_cell" title="Общая облачность: 100%
+ Верхняя облачность: 5%
+ Средняя облачность: 99%
+ Нижняя облачность: 100%
+Осадки: 1.14мм">
+                                    <div class="cloud_image_div cloud_sun_4_4"></div>
+                                </div>
+
+                                <div class="table-cell cloud_text_cell" title="пасмурно, небольшой снег">
+                                    <div class="cloud_text_div">пасмурно, небольшой снег</div>
+                                </div>
+
+                                <div class="table-cell wind_cell" title="Ветер: 6.2 м/с
+умеренный ветер, западный,юго-западный ">
+                                    <div class="wind_image_div wind_WSW"></div>
+                                    <div class="wind_socr_text_div">З,Ю-З</div>
+                                </div>
+
+                                <div class="table-cell wind_ms_cell" title="Ветер: 6.2 м/с
+ умеренный ветер, западный,юго-западный">6 м/с </div>
+
+
+                                <div class="table-cell pres_text_cell" title="Давление: 750 мм рт.ст.">750 мм</div>
+                                <div class="table-cell rh_text_cell" title="Относительная влажность воздуха: 92%">92%</div>
+                            </div>
+                            <div class="table-row-time">
+                                <div class="table-cell timeofday_cell" title="10 марта 23:00 (время местное)">
+                                    <div class="timeofday_div">вечер</div>
+                                    <div class="timeofday">23:00</div>
+                                </div>
+
+                                <div class="table-cell temperature_cell" title="10 марта 23:00
+Температура: -11.6 .. -11.1 °C 
+Осадки: небольшой снег
+Облачность: пасмурно
+Ветер: умеренный ветер, западный,юго-западный, 5 м/с 
+Влажность: 91 %
+Давление: 748 мм рт.ст.
+Видимость: 700 м.
+УФ-индекс: 0
+">-11°</div>
+
+                                <div class="table-cell cloud_cell" title="Общая облачность: 100%
+ Верхняя облачность: 100%
+ Средняя облачность: 100%
+ Нижняя облачность: 100%
+Осадки: 1.13мм">
+                                    <div class="cloud_image_div cloud_moon_4_4"></div>
+                                </div>
+
+                                <div class="table-cell cloud_text_cell" title="пасмурно, небольшой снег">
+                                    <div class="cloud_text_div">пасмурно, небольшой снег</div>
+                                </div>
+
+                                <div class="table-cell wind_cell" title="Ветер: 5.4 м/с
+умеренный ветер, западный,юго-западный ">
+                                    <div class="wind_image_div wind_WSW"></div>
+                                    <div class="wind_socr_text_div">З,Ю-З</div>
+                                </div>
+
+                                <div class="table-cell wind_ms_cell" title="Ветер: 5.4 м/с
+ умеренный ветер, западный,юго-западный">5 м/с </div>
+
+
+                                <div class="table-cell pres_text_cell" title="Давление: 748 мм рт.ст.">748 мм</div>
+                                <div class="table-cell rh_text_cell" title="Относительная влажность воздуха: 91%">91%</div>
+                            </div>
+                        </div>
+                        <div class="table-cell-day moon_cell">
+
+                            <div class="moon_div">
+                                <div class="sunrise_miniimage"></div>
+                                <div class="sunrise_set" title="Восход и закат солнца">
+                                    Восход: 07:44<br/> Закат: 19:05 </div>
+
+                                <div class="moon_miniimage"></div>
+                                <div class="moon_text" title="убывающая луна, третья четверть
+. Видимость луны: 53%
+ 22 лунный день">22 день<br/> Видимость 53%
+                                </div>
+                                <div class="moon_image moon7" title="убывающая луна, третья четверть
+ Видимость луны: 53%
+ 22 лунный день">
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="clear"></div>
+
+
+
+            <div class="rekla_down_block">
+
+                <div id="VNDI4fDAxMXwzMQ" style="margin: 20px 0 10px;width: 100%;">
+                    <!-- Yandex.RTB R-A-186487-13 -->
+                    <div id="yandex_rtb_R-A-186487-13"></div>
+                    <script>
+                        window.yaContextCb.push(() => {
+                            Ya.Context.AdvManager.render({
+                                renderTo: 'yandex_rtb_R-A-186487-13',
+                                blockId: 'R-A-186487-13'
+                            })
+                        })
+                    </script>
+                </div>
+
+            </div>
+
+            <div class="clear"></div>
+
+            <div class="vk_group">
+                <div class="vk_vopros">Нравится ли Вам сейчас погода за окном в Перми? Оставьте комментарий:</div>
+                <div id="vk_comments"></div>
+                <script>
+                    GWS.rjs.define("//vk.com/js/api/openapi.js?168", "vk_api");
+                    GWS.rjs.require(["vk_api"], function() {
+                        VK.init({
+                            apiId: 4377626,
+                            onlyWidgets: true
+                        });
+                        VK.Widgets.Comments("vk_comments", {
+                            limit: 3,
+                            width: "vk_group",
+                            attach: "photo",
+                            autoPublish: 1
+                        });
+                    });
+                </script>
+
+            </div>
+            <div class="clear"></div>
+
+            <div class="rekla_lenta_block">
+
+                <div id="lNDMwfDQxMHw2MQ" style="margin: 20px 0;width: 100%;"></div>
+            </div>
+
+
+
+        </div>
+
+        <div class="full_version" id="full_version">
+            <span onclick="changeVersion();">Полная версия</span>
+        </div>
+        <script>
+            if (screen.width && screen.width < 900 && document.getElementById('full_version'))
+                document.getElementById('full_version').style.display = "block";
+
+            function changeVersion() {
+                if ($.cookie('full_version'))
+                    $.cookie("full_version", null, {
+                        expires: -1,
+                        path: "/"
+                    });
+                else
+                    $.cookie("full_version", 1, {
+                        expires: 365,
+                        path: "/"
+                    });
+                location.reload();
+            }
+        </script>
+        <div class="for_footer"></div>
+    </div>
+    <div id="footer">
+        <div class="footer16">
+            <div class="copyright">
+                <b><span title="Прогноз погоды на неделю">© 2026 Pogoda7.ru</span></b>
+                <!--noindex-->
+                <a href="/static/about.html">О сайте</a>
+                <a href="/static/agreement.html">Пользовательское Соглашение</a>
+                <!--/noindex-->
+            </div>
+            <div class="help">
+
+
+
+                <script type="text/javascript">
+                    (function(d, w, c) {
+                        (w[c] = w[c] || []).push(function() {
+                            try {
+                                w.yaCounter24471680 = new Ya.Metrika({
+                                    id: 24471680,
+                                    webvisor: true,
+                                    clickmap: true,
+                                    trackLinks: true,
+                                    accurateTrackBounce: true
+                                });
+                            } catch (e) {}
+                        });
+
+                        var n = d.getElementsByTagName("script")[0],
+                            s = d.createElement("script"),
+                            f = function() {
+                                n.parentNode.insertBefore(s, n);
+                            };
+                        s.type = "text/javascript";
+                        s.async = true;
+                        s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+                        if (w.opera == "[object Opera]") {
+                            d.addEventListener("DOMContentLoaded", f, false);
+                        } else {
+                            f();
+                        }
+                    })(document, window, "yandex_metrika_callbacks");
+                </script>
+                <noscript><div><img src="//mc.yandex.ru/watch/24471680" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+                <script type="text/javascript">
+                    <!--
+                    document.write("<a href='//www.liveinternet.ru/click' " + "target=_blank><img src='//counter.yadro.ru/hit?t44.10;r" + escape(document.referrer) + ((typeof(screen) == "undefined") ? "" : ";s" + screen.width + "*" + screen.height + "*" + (screen.colorDepth ?
+                            screen.colorDepth : screen.pixelDepth)) + ";u" + escape(document.URL) + ";" + Math.random() + "' alt='' title='LiveInternet' " + "border='0' width='31' height='31'><\/a>")
+                        //-->
+                </script>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        GWS.rjs.define("/templates/pogoda/libs/9/main.min.js", "main");
+        if (GWS.map && GWS.map.show) {
+            GWS.rjs.define("/templates/pogoda/libs/9/leaflet.min.js", "leaflet_js");
+            GWS.rjs.require(["main", "leaflet_js"], function() {
+                createWIconsServers(GWS);
+                createMap(GWS);
+            });
+        }
+    </script>
+
+
+</body>
+
+</html>
