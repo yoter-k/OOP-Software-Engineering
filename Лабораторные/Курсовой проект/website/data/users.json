@@ -1,0 +1,43 @@
+[
+  {
+    "username": "admin",
+    "role": "Администратор",
+    "passwordHash": "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918",
+    "favorites": [
+      2,
+      1,
+      5
+    ]
+  },
+  {
+    "username": "chumeev",
+    "role": "Пользователь",
+    "passwordHash": "5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5"
+  },
+  {
+    "username": "igor",
+    "role": "Пользователь",
+    "passwordHash": "5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5"
+  },
+  {
+    "username": "igor123",
+    "role": "Пользователь",
+    "passwordHash": "3440b9c57a23e30fc89a1db5680e8d18a2a431cff0e55cb8a24f60763476c530",
+    "favorites": [
+      1,
+      4
+    ]
+  },
+  {
+    "username": "antony15",
+    "role": "Пользователь",
+    "favorites": [
+      30,
+      25,
+      13,
+      2,
+      6
+    ],
+    "passwordHash": "46883b7f21f83aba1d139d3713e5fddcafea7687bde99e94cca73af1f6a915c1"
+  }
+]
