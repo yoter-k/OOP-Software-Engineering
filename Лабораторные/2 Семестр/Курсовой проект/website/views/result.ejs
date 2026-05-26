@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%238e7554'%3E%3Cpath d='M19.5 6h-15A2.5 2.5 0 002 8.5v7A2.5 2.5 0 004.5 18h15a2.5 2.5 0 002.5-2.5v-7A2.5 2.5 0 0019.5 6zM8 13H6v-2h2v2zm5-1.5a1.5 1.5 0 11-1.5-1.5 1.5 1.5 0 011.5 1.5zm5 2a1.5 1.5 0 111.5-1.5 1.5 1.5 0 01-1.5 1.5z'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" type="text/css" href="/public/css/style.css" />
+    <script>
+
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark-theme');
+                document.addEventListener('DOMContentLoaded', () => {
+                    document.body.classList.add('dark-theme');
+                });
+            }
+        })();
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="logo-section">
+                <h1>Игровой<span>Атлас</span></h1>
+                <p>Справочник лучших видеоигр</p>
+            </div>
+
+            <nav class="nav-menu">
+                <a href="/" class="nav-link">Главная</a>
+                <% if (user) { %>
+                    <a href="/data" class="nav-link" style="color: var(--accent); border-bottom: 2px solid var(--accent); border-radius: 0;">Каталог</a>
+                    <a href="/profile" class="nav-link">Профиль</a>
+                <% } %>
+                <% if (user && user.role === 'Администратор') { %>
+                    <a href="/add-game" class="nav-link">Добавить игру</a>
+                    <a href="/users" class="nav-link">Пользователи</a>
+                <% } %>
+            </nav>
+
+            <div class="user-section">
+
+                <button class="theme-toggle-btn" id="themeToggleBtn" title="Переключить тему">
+
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                    </svg>
+
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m0 13.5V21m8.97-8.97h-2.25C18.18 12 18 11.82 18 11.625v-.75c0-.195.18-.375.375-.375h2.25c.195 0 .375.18.375.375v.75c0 .195-.18.375-.375.375zM5.625 12H3.375C3.18 12 3 11.82 3 11.625v-.75c0-.195.18-.375.375-.375h2.25c.195 0 .375.18.375.375v.75c0 .195-.18.375-.375.375zm12.06-6.435l-1.59 1.59m-9.18 9.18l-1.59 1.59m12.36 0l-1.59-1.59m-9.18-9.18l-1.59-1.59M12 7.5a4.5 4.5 0 110 9 4.5 4.5 0 010-9z" />
+                    </svg>
+                </button>
+
+                <% if (user) { %>
+                    <div class="user-widget">
+                        <div class="user-avatar"><%= user.username.charAt(0).toUpperCase() %></div>
+                        <div class="user-meta">
+                            <span class="username"><%= user.username %></span>
+                            <span class="user-role"><%= user.role %></span>
+                        </div>
+                    </div>
+                    <a href="/logout" class="btn-logout" title="Выйти">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
+                        </svg>
+                    </a>
+                <% } else { %>
+                    <a href="/login" class="nav-link">Войти</a>
+                    <a href="/register" class="nav-link btn-gold">Регистрация</a>
+                <% } %>
+            </div>
+        </header>
+
+        <main class="main-content">
+
+            <% if (type === 'single') { %>
+
+                <% if (game) { %>
+                    <section class="glass-panel immersive-container" style="border-top: 3px solid var(--accent);">
+
+                        <div class="sheet-layout">
+                            <div class="sheet-left">
+                                <div class="sheet-cover-wrapper">
+                                    <img src="<%= game.image %>" alt="<%= game.title %>" class="sheet-cover" />
+                                </div>
+
+                                <div class="rating-hub-stack" style="display: flex; flex-direction: column; gap: 12px; width: 100%; max-width: 280px;">
+
+                                    <div class="rating-hub" style="display: flex; align-items: center; gap: 16px; padding: 14px 20px; width: 100%; max-width: 280px;">
+                                        <div class="rating-hub-val">
+                                            <%= game.rating %><span>/10</span>
+                                        </div>
+                                        <div class="rating-hub-meta">
+                                            <%
+                                            let ratingStatus = 'Классика';
+                                            if (parseFloat(game.rating) >= 9.0) {
+                                                ratingStatus = 'Шедевр';
+                                            } else if (parseFloat(game.rating) >= 8.0) {
+                                                ratingStatus = 'Рекомендовано';
+                                            }
+                                            %>
+                                            <strong><%= ratingStatus %></strong>
+                                            <span>Оценка СМИ (Критики)</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="rating-hub" style="display: flex; align-items: center; gap: 16px; padding: 14px 20px; width: 100%; max-width: 280px;">
+                                        <div class="rating-hub-val">
+                                            <%= game.user_rating %><span>/10</span>
+                                        </div>
+                                        <div class="rating-hub-meta">
+                                            <%
+                                            let userRatingStatus = 'Популярно';
+                                            if (parseFloat(game.user_rating) >= 9.0) {
+                                                userRatingStatus = 'Народный выбор';
+                                            } else if (parseFloat(game.user_rating) >= 8.0) {
+                                                userRatingStatus = 'Любимо игроками';
+                                            } else if (parseFloat(game.user_rating) < 6.0) {
+                                                userRatingStatus = 'Спорно';
+                                            }
+                                            %>
+                                            <strong style="color: var(--text-secondary);"><%= userRatingStatus %></strong>
+                                            <span>Оценка игроков (Юзеры)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="sheet-right">
+                                <div class="sheet-header">
+                                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px;">
+                                        <h2 style="margin: 0;"><%= game.title %></h2>
+                                        <% if (user) { %>
+                                            <button class="fav-btn <%= user.favorites && user.favorites.includes(game.id) ? 'active' : '' %>" id="pageFavBtn" data-id="<%= game.id %>" title="В избранное" style="flex-shrink: 0; margin-top: 4px;">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                                </svg>
+                                            </button>
+                                        <% } %>
+                                    </div>
+                                    <div class="sheet-meta-tags" style="margin-top: 16px;">
+                                        <span class="genre-tag" style="background: var(--accent-light); border-color: var(--accent-border); color: var(--accent);"><%= game.genre %></span>
+                                        <span class="genre-tag"><%= game.developer %></span>
+                                        <span class="genre-tag"><%= game.release_year %> год</span>
+                                    </div>
+                                </div>
+
+                                <div class="sheet-desc-block">
+                                    <h3>Аннотация</h3>
+                                    <p><%= game.description %></p>
+                                </div>
+
+                                <div class="specs-asym-grid">
+                                    <div class="spec-tile">
+                                        <span class="spec-tile-lbl">ID в системе</span>
+                                        <span class="spec-tile-val" style="color: var(--accent);">#<%= game.id %></span>
+                                    </div>
+                                    <div class="spec-tile">
+                                        <span class="spec-tile-lbl">Разработчик</span>
+                                        <span class="spec-tile-val"><%= game.developer %></span>
+                                    </div>
+                                    <div class="spec-tile">
+                                        <span class="spec-tile-lbl">Жанр игры</span>
+                                        <span class="spec-tile-val"><%= game.genre %></span>
+                                    </div>
+                                    <div class="spec-tile">
+                                        <span class="spec-tile-lbl">Платформа</span>
+                                        <span class="spec-tile-val">PC / Консоли</span>
+                                    </div>
+                                </div>
+
+                                <div class="btn-container">
+                                    <button onclick="history.back()" class="btn btn-primary">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                                        </svg>
+                                        Вернуться назад
+                                    </button>
+                                    <a href="/" class="btn btn-secondary">На главную</a>
+                                    <a href="/data?random=true" class="btn btn-secondary">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 00-3.7-3.7 48.656 48.656 0 00-7.324 0 4.006 4.006 0 00-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3l-3-3M3 12c0 1.232.046 2.453.138 3.662a4.006 4.006 0 003.7 3.7 48.656 48.656 0 007.324 0 4.006 4.006 0 003.7-3.7c.017-.22.032-.441.046-.662M3 12l-3 3m3-3l3 3" />
+                                        </svg>
+                                        Случайная игра
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                <% } else { %>
+
+                    <div class="glass-panel" style="max-width: 500px; margin: 60px auto; text-align: center; padding: 48px 32px; border-top: 3px solid var(--red);">
+                        <div style="width: 48px; height: 48px; border-radius: 4px; background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); display: flex; align-items: center; justify-content: center; margin: 0 auto 24px auto;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                            </svg>
+                        </div>
+                        <h3 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 500; font-style: italic; color: var(--text-primary); margin-bottom: 12px;">Запись не найдена</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 28px; line-height: 1.6;"><%= error %></p>
+                        <a href="/" class="btn btn-primary">Вернуться на главную</a>
+                    </div>
+                <% } %>
+
+            <% } else if (type === 'list') { %>
+
+                <div class="workspace-layout">
+
+                    <aside class="filter-sidebar">
+                        <h3 class="sidebar-title">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
+                            </svg>
+                            Фильтры
+                        </h3>
+
+                        <form action="/data" method="GET" class="form-stack">
+                            <div class="input-block">
+                                <label for="genre">Жанр видеоигр</label>
+                                <select name="genre" id="genre">
+                                    <option value="all" <%= activeFilter === 'all' ? 'selected' : '' %>>Все жанры каталога</option>
+                                    <% genres.forEach(function(g) { %>
+                                        <option value="<%= g %>" <%= activeFilter === g ? 'selected' : '' %>><%= g %></option>
+                                    <% }); %>
+                                </select>
+                            </div>
+
+                            <div class="input-block">
+                                <label for="sortBy">Сортировать по</label>
+                                <select name="sortBy" id="sortBy">
+                                    <option value="id" <%= sortBy === 'id' ? 'selected' : '' %>>ID записи</option>
+                                    <option value="title" <%= sortBy === 'title' ? 'selected' : '' %>>Названию игры</option>
+                                    <option value="release_year" <%= sortBy === 'release_year' ? 'selected' : '' %>>Году выпуска</option>
+                                    <option value="rating" <%= sortBy === 'rating' ? 'selected' : '' %>>Рейтингу СМИ</option>
+                                    <option value="user_rating" <%= sortBy === 'user_rating' ? 'selected' : '' %>>Оценке игроков</option>
+                                    <option value="developer" <%= sortBy === 'developer' ? 'selected' : '' %>>Студии-разработчику</option>
+                                </select>
+                            </div>
+
+                            <div class="input-block">
+                                <label>Направление</label>
+                                <div class="sort-tabs" style="height: auto; min-height: 50px;">
+                                    <label class="sort-tab <%= sortDir === 'asc' ? 'active' : '' %>" style="font-size: 0.68rem; padding: 6px 4px; line-height: 1.25;" onclick="this.parentNode.querySelectorAll('.sort-tab').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
+                                        <input type="radio" name="sortDir" value="asc" <%= sortDir === 'asc' ? 'checked' : '' %> />
+                                        <span>↑ По возрастанию</span>
+                                    </label>
+                                    <label class="sort-tab <%= sortDir === 'desc' ? 'active' : '' %>" style="font-size: 0.68rem; padding: 6px 4px; line-height: 1.25;" onclick="this.parentNode.querySelectorAll('.sort-tab').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
+                                        <input type="radio" name="sortDir" value="desc" <%= sortDir === 'desc' ? 'checked' : '' %> />
+                                        <span>↓ По убыванию</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="input-block">
+                                <label for="gameId">Поиск по ID</label>
+                                <input type="number" name="id" id="gameId" placeholder="Например: 3" />
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 8px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                                </svg>
+                                Обновить список
+                            </button>
+                        </form>
+                    </aside>
+
+                    <div class="main-catalog-area" style="display: flex; flex-direction: column;">
+                        <div class="results-toolbar">
+                            <div class="results-count">
+                                Найдено записей: <strong><%= games.length %></strong>
+                                <% if (activeFilter !== 'all') { %>
+                                    <span class="active-pill">
+                                        <span>Жанр:</span> <strong><%= activeFilter %></strong>
+                                    </span>
+                                <% } %>
+                            </div>
+
+                            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                                <button onclick="exportCatalogToExcel()" class="btn btn-secondary" style="padding: 10px 18px; font-size: 0.8rem; border-color: var(--accent); color: var(--accent); background: var(--accent-light);" title="Скачать стилизованный отчет в Excel">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" style="margin-right: 4px; display: inline-block; vertical-align: middle;">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                                    </svg>
+                                    Экспорт в Excel
+                                </button>
+                                <a href="/" class="btn btn-secondary" style="padding: 10px 18px; font-size: 0.8rem;">Главная</a>
+                                <a href="/data?random=true" class="btn btn-secondary" style="padding: 10px 18px; font-size: 0.8rem;">Случайная</a>
+                            </div>
+                        </div>
+
+                        <div class="live-search-container">
+                            <div class="search-icon-wrapper">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.637 10.637z" />
+                                </svg>
+                            </div>
+                            <input type="text" id="liveSearchInput" class="live-search-input" placeholder="Быстрый SPA-поиск по названию, жанру или разработчику..." />
+                        </div>
+
+                        <% if (games.length > 0) { %>
+                            <div class="leaderboard-container">
+                                <table class="leaderboard-table">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 70px; text-align: center;">ID</th>
+                                            <th>Название видеоигры</th>
+                                            <th>Жанр</th>
+                                            <th>Разработчик</th>
+                                            <th style="width: 100px; text-align: center;">Выпуск</th>
+                                            <th style="width: 150px; text-align: center;">Рейтинг (СМИ / Игр.)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% games.forEach(function(game) { %>
+                                            <tr class="clickable"
+                                                onclick="openQuickView(event, this)"
+                                                title="Быстрый просмотр"
+                                                data-id="<%= game.id %>"
+                                                data-title="<%= game.title %>"
+                                                data-genre="<%= game.genre %>"
+                                                data-developer="<%= game.developer %>"
+                                                data-year="<%= game.release_year %>"
+                                                data-rating="<%= game.rating %>"
+                                                data-user-rating="<%= game.user_rating %>"
+                                                data-image="<%= game.image %>"
+                                                data-desc="<%= game.description %>"
+                                                data-favorited="<%= user && user.favorites && user.favorites.includes(game.id) ? 'true' : 'false' %>">
+                                                <td style="text-align: center; font-weight: 700; color: var(--text-tertiary);">
+                                                    #<%= game.id %>
+                                                </td>
+                                                <td class="game-title-cell">
+                                                    <%= game.title %>
+                                                </td>
+                                                <td>
+                                                    <span class="genre-tag"><%= game.genre %></span>
+                                                </td>
+                                                <td style="color: var(--text-secondary);">
+                                                    <%= game.developer %>
+                                                </td>
+                                                <td style="text-align: center; font-weight: 600; color: var(--text-primary);">
+                                                    <%= game.release_year %>
+                                                </td>
+                                                <td style="text-align: center;">
+                                                    <div style="display: flex; gap: 8px; justify-content: center; align-items: center;">
+
+                                                        <%
+                                                        let criticClass = 'good';
+                                                        if (parseFloat(game.rating) >= 9.0) {
+                                                            criticClass = 'excellent';
+                                                        } else if (parseFloat(game.rating) < 8.0) {
+                                                            criticClass = 'average';
+                                                        }
+                                                        %>
+                                                        <span class="circle-rating <%= criticClass %>" title="Оценка СМИ">
+                                                            <%= game.rating %>
+                                                        </span>
+
+                                                        <%
+                                                        let userClass = 'good';
+                                                        if (parseFloat(game.user_rating) >= 9.0) {
+                                                            userClass = 'excellent';
+                                                        } else if (parseFloat(game.user_rating) < 8.0) {
+                                                            userClass = 'average';
+                                                        }
+                                                        %>
+                                                        <span class="circle-rating <%= userClass %>" style="background: transparent; border-color: var(--border-strong); color: var(--text-primary);" title="Оценка игроков">
+                                                            <%= game.user_rating %>
+                                                        </span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        <% }); %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <% } else { %>
+                            <div class="glass-panel" style="text-align: center; padding: 48px;">
+                                <div style="width: 44px; height: 44px; border-radius: 4px; background: var(--bg-panel); border: 1px solid var(--border-regular); color: var(--text-tertiary); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px auto;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 13.5h3.86a2.25 2.25 0 012.008 1.24l.885 1.77a2.25 2.25 0 002.007 1.24h1.98a2.25 2.25 0 002.007-1.24l.885-1.77a2.25 2.25 0 012.007-1.24h3.86m-18 0h18a2.25 2.25 0 002.25-2.25V5.25A2.25 2.25 0 0017.25 3H6.75A2.25 2.25 0 004.5 5.25v6a2.25 2.25 0 002.25 2.25z" />
+                                    </svg>
+                                </div>
+                                <p style="color: var(--text-secondary); font-size: 0.9rem; font-weight: 600;">По заданным фильтрам результатов не найдено.</p>
+                            </div>
+                        <% } %>
+                    </div>
+                </div>
+            <% } %>
+
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Курсовой проект по программной инженерии.</p>
+        </footer>
+    </div>
+
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+    <div class="quick-view-drawer" id="quickViewDrawer">
+        <button class="drawer-close" id="drawerCloseBtn" title="Закрыть">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+
+        <div class="drawer-cover-frame">
+            <img src="/public/images/default.png" id="drawerCoverImg" class="drawer-cover-img" alt="Cover" />
+        </div>
+
+        <div class="drawer-title-block">
+            <h3 class="drawer-title" id="drawerTitle">Game Title</h3>
+
+            <button class="fav-btn" id="drawerFavBtn" title="В избранное">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                </svg>
+            </button>
+        </div>
+
+        <div class="drawer-meta-grid">
+            <div class="drawer-meta-item">
+                <span class="drawer-meta-lbl">Жанр</span>
+                <span class="drawer-meta-val" id="drawerGenre">Genre</span>
+            </div>
+            <div class="drawer-meta-item">
+                <span class="drawer-meta-lbl">Рейтинг (СМИ / Игры)</span>
+                <span class="drawer-meta-val" id="drawerRating" style="color: var(--accent);">0.0 / 0.0</span>
+            </div>
+            <div class="drawer-meta-item">
+                <span class="drawer-meta-lbl">Разработчик</span>
+                <span class="drawer-meta-val" id="drawerDeveloper">Developer</span>
+            </div>
+            <div class="drawer-meta-item">
+                <span class="drawer-meta-lbl">Релиз</span>
+                <span class="drawer-meta-val" id="drawerYear">2026</span>
+            </div>
+        </div>
+
+        <div class="drawer-desc" id="drawerDesc">
+            Game description goes here.
+        </div>
+
+        <div class="btn-container" style="margin-top: auto;">
+            <a href="#" id="drawerDetailsLink" class="btn btn-primary" style="width: 100%;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                </svg>
+                Полная страница игры
+            </a>
+        </div>
+    </div>
+
+    <script>
+
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', () => {
+                const isDark = document.body.classList.toggle('dark-theme');
+                document.documentElement.classList.toggle('dark-theme');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            });
+        }
+
+        const liveSearchInput = document.getElementById('liveSearchInput');
+        if (liveSearchInput) {
+            liveSearchInput.addEventListener('input', (e) => {
+                const query = e.target.value.toLowerCase().trim();
+                const rows = document.querySelectorAll('.leaderboard-table tbody tr');
+
+                rows.forEach(row => {
+                    const title = row.querySelector('.game-title-cell').textContent.toLowerCase();
+                    const genre = row.querySelector('.genre-tag').textContent.toLowerCase();
+                    const dev = row.dataset.developer.toLowerCase();
+
+                    if (title.includes(query) || genre.includes(query) || dev.includes(query)) {
+                        row.classList.remove('hidden-row');
+                    } else {
+                        row.classList.add('hidden-row');
+                    }
+                });
+            });
+        }
+
+        let activeGameId = null;
+
+        function openQuickView(event, row) {
+
+            if (event.target.closest('a') || event.target.closest('button') || event.target.classList.contains('circle-rating')) {
+
+            }
+
+            const data = row.dataset;
+            activeGameId = parseInt(data.id, 10);
+
+            document.getElementById('drawerCoverImg').src = data.image || '/public/images/default.png';
+            document.getElementById('drawerTitle').textContent = data.title;
+            document.getElementById('drawerGenre').textContent = data.genre;
+            document.getElementById('drawerRating').textContent = `${data.rating} / ${data.userRating}`;
+            document.getElementById('drawerDeveloper').textContent = data.developer;
+            document.getElementById('drawerYear').textContent = data.year;
+            document.getElementById('drawerDesc').textContent = data.desc;
+            document.getElementById('drawerDetailsLink').href = `/data?id=${data.id}`;
+
+            const favBtn = document.getElementById('drawerFavBtn');
+            const isFav = data.favorited === 'true';
+            if (isFav) {
+                favBtn.classList.add('active');
+            } else {
+                favBtn.classList.remove('active');
+            }
+
+            document.getElementById('drawerBackdrop').classList.add('active');
+            document.getElementById('quickViewDrawer').classList.add('active');
+        }
+
+        function closeDrawer() {
+            document.getElementById('drawerBackdrop').classList.remove('active');
+            document.getElementById('quickViewDrawer').classList.remove('active');
+        }
+
+        const closeBtn = document.getElementById('drawerCloseBtn');
+        if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+
+        const backdrop = document.getElementById('drawerBackdrop');
+        if (backdrop) backdrop.addEventListener('click', closeDrawer);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeDrawer();
+        });
+
+        const drawerFavBtn = document.getElementById('drawerFavBtn');
+        if (drawerFavBtn) {
+            drawerFavBtn.addEventListener('click', () => {
+                if (!activeGameId) return;
+                fetch('/favorites/toggle', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ gameId: activeGameId })
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success) {
+                        drawerFavBtn.classList.toggle('active', data.favorited);
+
+                        const matchingRow = document.querySelector(`.leaderboard-table tbody tr[data-id="${activeGameId}"]`);
+                        if (matchingRow) {
+                            matchingRow.dataset.favorited = data.favorited ? 'true' : 'false';
+                        }
+                    }
+                })
+                .catch(err => console.error('Error toggling favorite:', err));
+            });
+        }
+
+        const pageFavBtn = document.getElementById('pageFavBtn');
+        if (pageFavBtn) {
+            pageFavBtn.addEventListener('click', () => {
+                const gameId = parseInt(pageFavBtn.dataset.id, 10);
+                if (!gameId) return;
+                fetch('/favorites/toggle', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ gameId: gameId })
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success) {
+                        pageFavBtn.classList.toggle('active', data.favorited);
+                    }
+                })
+                .catch(err => console.error('Error toggling favorite on page:', err));
+            });
+        }
+
+        function exportCatalogToExcel() {
+            const rows = document.querySelectorAll('.leaderboard-table tbody tr');
+
+            let html = `
+            <html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40">
+            <head>
+                <meta charset="utf-8" />
+                <!--[if gte mso 9]>
+                <xml>
+                    <x:ExcelWorkbook>
+                        <x:ExcelWorksheets>
+                            <x:ExcelWorksheet>
+                                <x:Name>Игровой Атлас</x:Name>
+                                <x:WorksheetOptions>
+                                    <x:DisplayGridlines/>
+                                </x:WorksheetOptions>
+                            </x:ExcelWorksheet>
+                        </x:ExcelWorksheets>
+                    </x:ExcelWorkbook>
+                </xml>
+                <![endif]-->
+                <style>
+                    table { border-collapse: collapse; font-family: 'Segoe UI', Arial, sans-serif; font-size: 11pt; }
+                    th { background-color: #8e7554; color: #ffffff; font-weight: bold; border: 1px solid #c5a880; padding: 10px; text-align: left; }
+                    td { border: 1px solid #e2e2e5; padding: 8px; color: #1c1c1e; }
+                    .id-col { text-align: center; font-weight: bold; color: #828286; background-color: #f4f3ef; }
+                    .rating-col { text-align: center; font-weight: bold; mso-number-format: "\\@"; }
+                    .even-row { background-color: #fbfbfa; }
+                </style>
+            </head>
+            <body>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 60px; text-align: center;">ID</th>
+                            <th style="width: 280px;">Название видеоигры</th>
+                            <th style="width: 140px;">Жанр</th>
+                            <th style="width: 180px;">Разработчик</th>
+                            <th style="width: 90px; text-align: center;">Выпуск</th>
+                            <th style="width: 110px; text-align: center;">Рейтинг СМИ</th>
+                            <th style="width: 120px; text-align: center;">Оценка игроков</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+
+            let exportCount = 0;
+            let rowIndex = 0;
+            rows.forEach(row => {
+                if (row.classList.contains('hidden-row')) return;
+
+                const data = row.dataset;
+                const id = data.id || '';
+                const title = data.title || '';
+                const genre = data.genre || '';
+                const dev = data.developer || '';
+                const year = data.year || '';
+                const rating = data.rating || '';
+                const userRating = data.userRating || '';
+
+                const rowStyle = rowIndex % 2 === 1 ? 'class="even-row"' : '';
+
+                html += `
+                    <tr ${rowStyle}>
+                        <td class="id-col">#${id}</td>
+                        <td style="font-weight: bold; color: #1c1c1e;">${title}</td>
+                        <td>${genre}</td>
+                        <td>${dev}</td>
+                        <td style="text-align: center;">${year}</td>
+                        <td class="rating-col" style="color: #2e7d32; background-color: #e8f5e9; border: 1px solid #c8e6c9;">${rating}</td>
+                        <td class="rating-col" style="color: #8e7554; background-color: rgba(142, 117, 84, 0.05); border: 1px solid rgba(142, 117, 84, 0.15);">${userRating}</td>
+                    </tr>
+                `;
+
+                rowIndex++;
+                exportCount++;
+            });
+
+            html += `
+                    </tbody>
+                </table>
+            </body>
+            </html>
+            `;
+
+            if (exportCount === 0) {
+                alert('Нет доступных данных для экспорта!');
+                return;
+            }
+
+            const blob = new Blob([html], { type: 'application/vnd.ms-excel;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement("a");
+            link.setAttribute("href", url);
+
+            const now = new Date();
+            const dateStr = now.toISOString().slice(0, 10);
+            link.setAttribute("download", `Игровой_Атлас_Экспорт_${dateStr}.xls`);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>
